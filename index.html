@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESCUELA SUPERIOR DE COMERCIO Nº 44</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="../images/flaticon.png"> 
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div id="page-loader">
+      <div class="gif-container">
+          <img src="images/carga.gif" alt="Loading GIF"> 
+      </div>
+
+      <div class="loading-content">
+          <div class="loading-text">CARGANDO</div>
+          
+          <div class="loading-dotts">
+              <div class="dott"></div>
+              <div class="dott"></div>
+              <div class="dott"></div>
+          </div>
+      </div>
+  </div>
+  <header class="header">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo de la Institución"></a>
+
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <a href="index.html" style="--i:0;">Inicio</a>
+
+            <div class="dropdown" id="oferta-dropdown" style="--i:1;">
+                <a href="#" class="dropdown-toggle">Oferta educativa</a> 
+                <div class="dropdown-content">
+                    <a href="NIVELMEDIO/index.html">Nivel Medio</a>
+                    <a href="NIVELSUPERIOR/index.html">Nivel Superior</a>
+                </div>
+            </div>
+
+            <div class="dropdown" id="institucion-dropdown" style="--i:2;">
+                <a href="#" class="dropdown-toggle">Institución</a>
+                <div class="dropdown-content">
+                    <a href="HISTORIA/index1.html">Historia</a>
+                    <a href="OBJETIVOS/index.html">Objetivos</a>
+                    <a href="MISIÓN/index.html">Mision</a>
+                </div>
+            </div>
+
+            <a href="GALERIA/index.html" style="--i:3;">Galeria</a>
+            <a href="CONTACTO/index.html" style="--i:4;">Contacto</a>
+        </nav>
+  </header>
+  <div class="header-spacer"></div>
+  <div class="carousel" id="myCarousel">
+
+    <div class="carousel-inner" id="carouselInner">
+      <div class="carousel-item">
+        <img src="images/Diap1.png" alt="Imagen 1">
+      </div>
+      <div class="carousel-item">
+        <img src="images/Diap2.png" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="images/afdsi.png" alt="Imagen 3">
+      </div>
+       <div class="carousel-item">
+        <img src="images/Pasantías nivel medio.png" alt="Imagen 4">
+      </div>
+      <div class="carousel-item">
+        <img src="images/pasantias.png" alt="Imagen 5">
+      </div>
+     <div class="carousel-item">
+        <img src="images/visitas.png" alt="Imagen 6">
+      </div>
+    </div>
+
+
+    <button class="carousel-control-prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-control-next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <div class="container-inicio">
+    <div class="info-section">
+      <div class="info-header">
+        <h1 class="info-title">Bienvenido al sitio de la Escuela Superior de Comercio</h1>
+        <p class="info-subtitle">¡Te invitamos a conocernos!</p>
+      </div>
+      
+      <div class="info-content">
+        <p>
+           La escuela les da la bienvenida a su espacio institucional. Con una trayectoria que combina
+            tradición y renovación, formamos estudiantes comprometidos, críticos y capaces de afrontar 
+            los desafíos del presente y del futuro. Nuestro objetivo es acompañar a cada alumno en su
+             camino de aprendizaje, fortaleciendo valores, impulsando el conocimiento y promoviendo la
+              participación activa en la comunidad educativa. Este sitio web busca ser un puente entre la 
+              escuela, las familias y la sociedad, ofreciendo información clara, actualizada y accesible para todos. 
+  Estudiar, crecer, soñar, aquí en la Escuela Superior lo vas a lograr.  
+
+        </p>
+      </div>
+    </div>
+    
+    <div class="info-image">
+      <img src="images/ftoesc.jpeg" alt="Escuela Superior de Comercio">
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      </div>
+    <div class="dots-container" id="dotsContainer">
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+<script>
+
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="jcLNMMsv-JgTgPDX_fjzf";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+</body>
+<footer class="footer-minimal">
+    <div class="container footer-content-minimal">
+        
+        <div class="social-icons-minimal">
+            <a href="https://www.facebook.com/comerciogalvez" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/escom44" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <p class="copyright-minimal">
+    <a href="derechos.html" target="_blank">
+        &copy; 2025 ESCOM 44. Todos los derechos reservados.
+    </a>
+</p>
+    </div>
+</footer>
+</html>

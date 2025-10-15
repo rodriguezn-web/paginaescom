@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIVEL SUPERIOR </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="icon" type="image/png" href="images/logosinf.png"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="page-loader">
+      <div class="gif-container">
+          <img src="../images/carga.gif" alt="Loading GIF"> 
+      </div>
+
+      <div class="loading-content">
+          <div class="loading-text">CARGANDO</div>
+          
+          <div class="loading-dotts">
+              <div class="dott"></div>
+              <div class="dott"></div>
+              <div class="dott"></div>
+          </div>
+      </div>
+  </div>
+    <header class="header">
+            <a href="../index.html" class="logo"><img src="images/logosinf.png" alt="Logo de la Institución"></a>
+
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+         <nav class="navbar">
+            <a href="../index.html" style="--i:0;">Inicio</a>
+
+            <div class="dropdown" id="oferta-dropdown" style="--i:1;">
+                <a href="#" class="dropdown-toggle">Oferta educativa</a> 
+                <div class="dropdown-content">
+                    <a href="../NIVELMEDIO/index.html">Nivel Medio</a>
+                    <a href="index.html">Nivel Superior</a>
+                </div>
+            </div>
+
+            <div class="dropdown" id="institucion-dropdown" style="--i:2;">
+                <a href="#" class="dropdown-toggle">Institución</a>
+                <div class="dropdown-content">
+                    <a href="../HISTORIA/index1.html">Historia</a>
+                    <a href="../OBJETIVOS/index.html">Objetivos</a>
+                    <a href="../MISIÓN/index.html">Mision</a>
+                </div>
+            </div>
+
+            <a href="../GALERIA/index.html" style="--i:3;">Galeria</a>
+            <a href="../CONTACTO/index.html" style="--i:4;">Contacto</a>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NIVEL SUPERIOR</h1>
+            <p>Transformá tu futuro con nuestras carreras técnicas de vanguardia</p>
+            <div class="cta-buttons">
+                <button class="cta-btn gestion-btn" onclick="mostrarCarrera('gestion')">
+                    <i class="fas fa-industry"></i> Gestión Industrial
+                </button>
+                <button class="cta-btn sistemas-btn" onclick="mostrarCarrera('sistemas')">
+                    <i class="fas fa-laptop-code"></i> Análisis Funcional de <br>Sistemas Informáticos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sistemas" class="carrera-section sistemas-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tecnicatura Superior en Análisis Funcional de Sistemas Informáticos</h2>
+                <p>Conectá ideas, transformá sistemas.</p>
+            </div>
+
+            <div class="tarjetas-container">
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>TE CAPACITA PARA</h3>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div class="accordion-container">
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-user-check"></i> Entender las necesidades del usuario
+                                </div>
+                                <div class="accordion-content">
+                                    <p>identificar y analizar los requerimientos del sistema.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-project-diagram"></i> Modelar procesos y sistemas
+                                </div>
+                                <div class="accordion-content">
+                                    <p> desarrollar modelos que representen las necesidades de la organización y su operatoria.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-border-all"></i> Definir el alcance del proyecto
+                                </div>
+                                <div class="accordion-content">
+                                    <p>establecer los límites y prioridades del proyecto para garantizar su éxito</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-comments"></i> Comunicar eficazmente
+                                </div>
+                                <div class="accordion-content">
+                                    <p>transferir los requisitos de software al equipo de desarrollo para asegurar una implementación efectiva.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-sync-alt"></i> Gestionar el cambio
+                                </div>
+                                <div class="accordion-content">
+                                    <p> administrar los cambios y solicitudes de manera eficiente para mantener la integridad del proyecto.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-lightbulb"></i> Innovar y crear
+                                </div>
+                                <div class="accordion-content">
+                                    <p> desarrollar soluciones innovadoras y emprendedoras en el ámbito de la gestión de sistemas informáticos.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>PODÉS DESEMPEÑARTE EN:</h3>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div class="accordion-container">
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-user-check"></i> Análisis y Consultoría
+                                </div>
+                                <div class="accordion-content">
+                                    <p>ayudar a empresas a mejorar sus procesos y sistemas informáticos.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-project-diagram"></i> Asesoramiento estratégico
+                                </div>
+                                <div class="accordion-content">
+                                    <p>guiar a empresas públicas y privadas en la adopción de nuevas tecnologías y procesos.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-border-all"></i> Desarrollo de Software
+                                </div>
+                               <div class="accordion-content">
+                                    <p>crear soluciones informáticas personalizadas para satisfacer las necesidades de las organizaciones.</p>
+                                </div> 
+                                
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-comments"></i> Docencia y Formación
+                                </div>
+                                <div class="accordion-content">
+                                    <p> enseñar y capacitar a estudiantes en el uso y desarrollo de tecnologías informáticas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>QUÉ OFRECE LA ESCOM 44</h3>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div class="accordion-container">
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-user-check"></i> Sólida trayectoria Institucional
+                                </div>
+                                <div class="accordion-content">
+                                    <p>excelencia y prestigio académico</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-project-diagram"></i>Infraestructura técnica avanzada 
+                                </div>
+                                <div class="accordion-content">
+                                    <p>aulas y salas de informáticas</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-border-all"></i> Personal docente competente
+                                </div>
+                                <div class="accordion-content">
+                                    <p>docentes especializados y calificados</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-comments"></i> Biblioteca con acceso a internet
+                                </div>
+                                <div class="accordion-content">
+                                    <p> recursos para la investigación y el estudio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-carrera">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">¿Por qué elegir esta carrera?</h3>
+                
+                
+                <div id="info-carrera">
+                    <p>Es una excelente opción porque te ofrece una formación integral y altamente demandada en el mercado laboral.
+                    Recibirás una sólida formación en áreas clave como el desarrollo de software, el diseño de sitios web, la gestión de bases de datos y los 
+                    sistemas administrativos. Estas habilidades te permitirán trabajar
+                     y adaptarte a cualquier tipo de empresa, sin importar su tamaño o sector. No solo aprenderás a usar herramientas técnicas, 
+                     sino que también desarrollarás una visión estratégica del negocio. 
+                    Serás un profesional capaz de interpretar el entorno económico, aplicar soluciones tecnológicas para mejorar la dinámica
+                     empresarial y analizar los procesos internos de una organización, lo que te convierte en un activo valioso y bien preparado.</p>
+                </div>
+            </div> 
+            <div class="info-practica">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Información Práctica</h3>
+                <div class="tabs">
+                    <div class="tab active" onclick="openTab(event, 'horarios-sistemas')">Horarios</div>
+                    <div class="tab" onclick="openTab(event, 'requisitos-sistemas')">Requisitos</div>
+                    <div class="tab" onclick="openTab(event, 'materias-sistemas')">Materias</div>
+                </div>
+                
+                <div id="horarios-sistemas" class="tab-content active">
+                    <p>Lunes a Viernes: 18:30 - 22:40</p>
+                </div>
+                
+                <div id="requisitos-sistemas" class="tab-content">
+                    <ul>
+                        <li>Título de nivel secundario</li>
+                        <li>Certificado de salud (oficial)</li>
+                        <li>Documentación de identidad</li>
+                        <li>2 fotos carnet 4x4</li>
+                        <li>Partida de nacimiento</li>
+                        <li>Declaración Policial de Domicilio</li>
+                    </ul>
+                </div>
+                
+                <div id="materias-sistemas" class="tab-content">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                            <th>1° Año</th>
+                            <th>2° Año</th>
+                            <th>3° Año</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>Comunicación</td>
+                            <td>Problemáticas Socio Contemporáneas</td>
+                            <td>Ética y Responsabilidad Social</td>
+                            </tr>
+                            <tr>
+                            <td>Unidad de Definición Institucional I</td>
+                            <td>Unidad de Definición Institucional II</td>
+                            <td>Derecho y Legislación Laboral</td>
+                            </tr>
+                            <tr>
+                            <td>Matemática</td>
+                            <td>Estadística</td>
+                            <td>Desarrollo de Sistemas Web</td>
+                            </tr>
+                            <tr>
+                            <td>Inglés Técnico I</td>
+                            <td>Inglés Técnico II</td>
+                            <td>Seguridad de Sistemas</td>
+                            </tr>
+                            <tr>
+                            <td>Arquitectura de las Computadoras I</td>
+                            <td>Innovación y Desarrollo Emprendedor</td>
+                            <td>Bases de Datos</td>
+                            </tr>
+                            <tr>
+                            <td>Gestión de Software I</td>
+                            <td>Gestión de Software II</td>
+                            <td>Redes y Comunicaciones</td>
+                            </tr>
+                            <tr>
+                            <td>Psicosociología de las Organizaciones</td>
+                            <td>Desarrollo de Sistemas</td>
+                            <td>Sistemas de Información Organizacionales</td>
+                            </tr>
+                            <tr>
+                            <td>Modelos de Negocios</td>
+                            <td>Estrategias de Negocios</td>
+                            <td>Práctica Profesionalizante II</td>
+                            </tr>
+                            <tr>
+                            <td>Análisis de Sistemas Organizacionales</td>
+                            <td>Práctica Profesionalizante I</td>
+                            <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gestion" class="carrera-section gestion-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tecnicatura Superior en Gestión Industrial</h2>
+                <p>Forma parte de la industria del mañana.</p>
+            </div>
+
+            <div class="tarjetas-container">
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>ÁREA OCUPACIONAL</h3>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div class="accordion-container">
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-user-check"></i> Producción
+                                </div>
+                                <div class="accordion-content">
+                                    <p> liderando la eficiencia en la fabricación y el control de calidad</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-project-diagram"></i> Finanzas
+                                </div>
+                                <div class="accordion-content">
+                                    <p>gestionando recursos financieros y presupuestos</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-border-all"></i> Administración
+                                </div>
+                                <div class="accordion-content">
+                                    <p>optimizando la gestión de recursos humanos y la logística</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-comments"></i> Gestión comercial
+                                </div>
+                                <div class="accordion-content">
+                                    <p>impulsando las ventas y el marketing</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>QUÉ OFRECE LA ESCOM 44</h3>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div class="accordion-container"> 
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-user-check"></i> Formación técnica especializada
+                                </div>
+                                <div class="accordion-content">
+                                    <p>una carrera sólida con infraestructura tecnológica avanzada</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-project-diagram"></i> Cursos de nivelación
+                                </div>
+                                <div class="accordion-content">
+                                    <p>un programa de primer año para prepararte e insertarte en el mundo laboral</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-border-all"></i> Conexión con la industria
+                                </div>
+                                <div class="accordion-content">
+                                    <p>charlas con expertos y colaboración constante con la Cámara de Industrias Metalúrgicas de Santa Fe para mantener 
+                                        la educación actualizada y relevante.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="tarjeta-header">
+                        <h3>TE CAPACITA PARA</h3>
+                    </div>
+                    <div class="tarjeta-body">
+                        <div class="accordion-container">
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-user-check"></i> Liderazgo
+                                </div>
+                                <div class="accordion-content">
+                                    <p>liderar y coordinar operaciones en áreas clave de la industria </p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-project-diagram"></i> Análisis
+                                </div>
+                                <div class="accordion-content">
+                                    <p>analizar información y tomar decisiones estratégicas</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-border-all"></i> Comunicación
+                                </div>
+                                <div class="accordion-content">
+                                    <p>trabajar en equipo y negociar con distintos actores</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <i class="fas fa-comments"></i> Innovación
+                                </div>
+                                <div class="accordion-content">
+                                    <p>proponer soluciones innovadoras y desarrollar proyectos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-carrera">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">¿Por qué elegir esta carrera?</h3>
+                
+                
+                <div id="info-carrera">
+                    <p>Para elegir la Tecnicatura Superior en Gestión Industrial, considera que es una carrera enfocada
+                         en el liderazgo y la optimización. Te prepara para ser un profesional clave en cualquier tipo de 
+                         organización, ya que te capacita para trabajar en áreas fundamentales como producción, 
+                         finanzas, administración y gestión comercial.
+
+                        Aprenderás a supervisar procesos, tomar decisiones estratégicas y coordinar equipos, lo que te 
+                        convertirá en un recurso indispensable para asegurar el éxito y el crecimiento de la empresa. 
+                        Además, la carrera te ofrece un plan de estudios completo, con docentes competentes y un 
+                        fuerte vínculo con el sector industrial.</p>
+                </div>
+            </div> 
+            <div class="info-practica">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Información Práctica</h3>
+                <div class="tabs">
+                    <div class="tab active" onclick="openTab(event, 'horarios-gestion')">Horarios</div>
+                    <div class="tab" onclick="openTab(event, 'requisitos-gestion')">Requisitos</div>
+                    <div class="tab" onclick="openTab(event, 'materias-gestion')">Materias</div>
+                </div>
+                
+                <div id="horarios-gestion" class="tab-content active">
+                    <p>Lunes a Viernes: 18:30 - 22:40</p>
+                </div>
+                
+                <div id="requisitos-gestion" class="tab-content">
+                    <ul>
+                        <li>Título de nivel secundario</li>
+                        <li>Certificado de salud (oficial)</li>
+                        <li>Documentación de identidad</li>
+                        <li>2 fotos carnet 4x4</li>
+                        <li>Partida de nacimiento</li>
+                        <li>Declaración Policial de Domicilio</li>
+                    </ul>
+                </div>
+                
+                <div id="materias-gestion" class="tab-content">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                            <th>1° Año</th>
+                            <th>2° Año</th>
+                            <th>3° Año</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>Comunicación</td>
+                            <td>Problemáticas Socio Contemporáneas</td>
+                            <td>Gestión de Seguridad, Salud Ocupacional y Medio Ambiente</td>
+                            </tr>
+                            <tr>
+                            <td>Unidad de Definición Institucional I</td>
+                            <td>Unidad de Definición Institucional II</td>
+                            <td>Ética y Responsabilidad Social</td>
+                            </tr>
+                            <tr>
+                            <td>Economía</td>
+                            <td>Innovación y Desarrollo Emprendedor</td>
+                            <td>Legislación Laboral</td>
+                            </tr>
+                            <tr>
+                            <td>Matemática y Estadística</td>
+                            <td>Gestión de la Calidad</td>
+                            <td>Gestión del Mantenimiento Industrial</td>
+                            </tr>
+                            <tr>
+                            <td>Contabilidad y Finanzas</td>
+                            <td>Logística y Gestión de la Cadena de Abastecimiento</td>
+                            <td>Sistema de Información para la Gestión de Empresas (SIGE)</td>
+                            </tr>
+                            <tr>
+                            <td>Informática</td>
+                            <td>Gestión de Comercialización e Investigación Comercial</td>
+                            <td>Gestión Financiera</td>
+                            </tr>
+                            <tr>
+                            <td>Administración</td>
+                            <td>Inglés Técnico</td>
+                            <td>Evaluación y Gestión de Proyectos de Inversión</td>
+                            </tr>
+                            <tr>
+                            <td>Estrategia Empresarial</td>
+                            <td>Gestión Contable</td>
+                            <td>Control de Gestión</td>
+                            </tr>
+                            <tr>
+                            <td>Planificación y Control de la Producción</td>
+                            <td>Práctica Profesionalizante I</td>
+                            <td>Práctica Profesionalizante II</td>
+                            </tr>
+                            <tr>
+                            <td>Gestión del Talento Humano</td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td>Gestión de Costos</td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="cuestionario">
+    <div class="container">
+        <h3>Descubre tu perfil</h3>
+        <p style="text-align: center; margin-bottom: 2rem;">Respondé estas preguntas para descubrir qué carrera se adapta mejor a tus intereses</p>
+        
+        <div class="pregunta">
+            <h4>1. ¿Qué tipo de problemas te interesan más?</h4>
+            <div class="opciones">
+                
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Organizacionales y de procesos</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Tecnológicos y de sistemas</div>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h4>2. ¿En qué entorno te imaginas trabajando?</h4>
+            <div class="opciones">
+                
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Fábricas, coordinando equipos</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Oficinas, desarrollando software</div>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h4>3. ¿Cuál es tu mayor fortaleza?</h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Liderazgo y comunicación</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Lógica y pensamiento analítico</div>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h4>4. Si tuvieras que elegir, preferís trabajar con: </h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Máquinas y personas para la productividad</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Datos y software para una solución digital</div>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h4>5. ¿Qué tipo de conocimiento te parece más interesante? </h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Logística, finanzas y administración de personal</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Ingeniería de software y bases de datos</div>
+            </div>
+        </div>
+
+        <div class="pregunta">
+           <h4>6. ¿Qué te parece más importante en el mundo laboral? </h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">La habilidad para gestionar y optimizar recursos humanos y materiales</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">La capacidad de programar y desarrollar nuevas aplicaciones</div>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h4>7. ¿En qué área te ves aportando más valor?</h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Supervisión de la producción y la cadena de suministro</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Análisis de requisitos y diseño de sistemas</div>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h4>8. ¿Te consideras una persona que prefiere la teoría o la práctica?</h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Prefiero aplicar soluciones prácticas para resolver problemas del día a día en una fábrica</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Me gusta analizar conceptos abstractos, como algoritmos y bases de datos</div>
+            </div>
+        </div>
+
+         <div class="pregunta">
+            <h4>9. Si tuvieras que liderar un proyecto, ¿qué te emocionaría más?</h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Coordinar los recursos, el personal y los plazos para una línea de producción</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">Diseñar la estructura y la lógica de un nuevo sistema de software</div>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h4>10. ¿Qué te llama más la atención al entrar a una empresa?</h4>
+            <div class="opciones">
+                <div class="opcion gestion-opcion" onclick="seleccionarOpcion(this, 'gestion')">Cómo se organizan los equipos y los flujos de trabajo en el lugar</div>
+                <div class="opcion" onclick="seleccionarOpcion(this, 'sistemas')">La tecnología que utilizan para manejar sus datos y operaciones</div>
+            </div>
+        </div>
+        
+        <div id="resultado-cuestionario" class="resultado">
+            <h4>Resultado</h4>
+            <p id="texto-resultado"></p>
+            <button class="cta-btn" style="margin-top: 1rem; background: var(--azul);" onclick="location.reload()">Reintentar</button>
+        </div>
+    </div>
+</section>
+<!-- >>> FIX: remove bootstrap caret (pegar justo antes de </body>) -->
+<style>
+/* elimina el triangulito/caret de Bootstrap */
+.dropdown-toggle::after,
+a.dropdown-toggle::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+</style>
+<!-- <<< end fix -->
+
+    <script src="script.js"></script>
+</body>
+<footer class="footer-minimal">
+    <div class="footer-content-minimal">
+        
+       
+        <div class="social-icons-minimal">
+            <a href="https://www.facebook.com/comerciogalvez" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/escom44" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <p class="copyright-minimal">&copy; 2025 ESCOM 44. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,859 @@
+:root {
+    --header-height: calc(1.3rem * 2 + 2.5rem);
+}
+/* ------------------------------------- */
+/* --- ESPACIADOR SÓLIDO (CON COLOR Y ANIMACIÓN) --- */
+/* ------------------------------------- */
+.header-spacer {
+    /* Mantiene la altura del encabezado fijo para empujar el contenido */
+    height: var(--header-height);
+    width: 100%;
+    
+    /* PROPIEDADES VISUALES APLICADAS */
+    background-color:  #565e79; /* Azul Francia */
+    position: relative; /* Necesario para posicionar el pseudo-elemento animado */
+    overflow: hidden; /* Oculta el pseudo-elemento que crea el efecto */
+}
+
+/* Efecto de movimiento leve dentro del fondo */
+.header-spacer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* Gradiente radial sutil para el efecto de movimiento */
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 10%, transparent 70%);
+    animation: slight-move 15s infinite linear;
+}
+
+@keyframes slight-move {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(5%, 5%) rotate(1deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}:root {
+    --dark-bg: #000000;
+    --dark-secondary: #0a0a0a;
+    --accent: #1a237e;
+    --accent-light: #3949ab;
+    --accent-bright: #5c6bc0;
+    --text-primary: #ffffff;
+    --text-secondary: #b0bec5;
+    --card-bg: rgba(10, 10, 10, 0.9);
+    --highlight-bg: rgba(26, 35, 126, 0.2);
+    --border-color: rgba(92, 107, 192, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+
+.header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0,0,0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255, .4),
+    transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+/* ESTILO DEL LOGO (CONTENEDOR DEL ENLACE) */
+.logo{
+    text-decoration: none;
+    font-weight: 700;
+    display: flex; /* Asegura que la imagen esté bien centrada */
+    align-items: center;
+}
+
+/* ESTILO DE LA IMAGEN DENTRO DEL LOGO */
+.logo img {
+    height: 2.5rem; /* Ajusta la altura de la imagen en la barra */
+    width: auto;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.8rem;
+}
+
+/* ------------------------------------- */
+/* --- ESTILOS PARA MENÚS DESPLEGABLES (DROPDOWN) - ESCRITORIO --- */
+/* ------------------------------------- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.8rem;
+}
+
+.dropdown > a {
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    background: rgba(0,0,0, .7); 
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 200;
+    border-radius: 5px;
+    padding: 5px 0; 
+}
+
+.dropdown-content a {
+    color: aliceblue;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-weight: 400;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Muestra el submenú al pasar el ratón en escritorio */
+}
+
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: aliceblue;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+    
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0; 
+        background: rgba(0,0,0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 100vh; 
+        overflow-y: auto; 
+    }
+
+    /* Reglas para los elementos de navegación en móvil */
+    .navbar a,
+    .dropdown {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+    
+    /* ESTILOS DE LOS CONTENEDORES DROPDOWN EN MÓVIL */
+    .dropdown {
+        margin: 1.5rem 0;
+        display: block;
+    }
+
+    .dropdown-content {
+        /* Ocultar submenú por defecto en móvil */
+        display: block; 
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out; 
+        
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        background: transparent;
+        backdrop-filter: none;
+        padding: 0;
+        transform: none;
+    }
+
+    /* ESTILO DE LOS SUBENLACES EN MÓVIL (Indentación) */
+    .dropdown-content a {
+        text-align: left; 
+        padding: 8px 16px; 
+        padding-left: 60px; /* INDENTACIÓN */
+        font-size: 1rem; 
+        margin: 0.5rem 0; 
+        
+        opacity: 1; 
+        transform: none;
+    }
+    
+    /* Aseguramos que el enlace principal no tenga el margen de los otros */
+    .dropdown-toggle {
+        margin: 1.5rem 0;
+    }
+}
+/* Fondo con imagen más oscuro */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/FondoMision.png) center/cover;
+    opacity: 0.05;
+    z-index: -2;
+}
+
+/* Fondo animado más oscuro */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 80%, var(--accent-bright) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--accent) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, var(--dark-secondary) 0%, transparent 50%),
+                var(--dark-bg);
+    animation: bgShift 25s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+    0%, 100% { background-position: 0% 0%, 100% 0%, 0% 0%, 0% 0%; }
+    50% { background-position: 100% 100%, 0% 100%, 100% 0%, 100% 0%; }
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Título principal */
+.main-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.main-title h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--text-primary), var(--accent-light), var(--accent-bright));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
+    animation: titlePulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* Bloques separados con fondo negro */
+.mission-blocks {
+    background: transparent; /* AHORA TRANSPARENTE */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.mission-block {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(92, 107, 192, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.mission-block:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-light);
+    box-shadow: 0 20px 40px rgba(92, 107, 192, 0.4);
+}
+
+.mission-block:hover::before {
+    opacity: 1;
+}
+
+.mission-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.mission-block:hover .mission-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 25px rgba(92, 107, 192, 1);
+}
+
+.mission-icon i {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+}
+
+.mission-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.mission-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-bright);
+    transition: width 0.3s ease;
+}
+
+.mission-block:hover .mission-title::after {
+    width: 100%;
+}
+
+.mission-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.mission-highlight {
+    background: var(--highlight-bg);
+    border-left: 3px solid var(--accent-light);
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mission-highlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(92, 107, 192, 0.3), transparent 70%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.mission-block:hover .mission-highlight::before {
+    animation: highlightPulse 1.5s ease infinite;
+}
+
+@keyframes highlightPulse {
+    0% { transform: rotate(45deg) scale(0.8); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: rotate(45deg) scale(1.2); opacity: 0; }
+}
+
+/* Bloque de texto introductorio */
+.intro-section {
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 60px 40px;
+    margin: 80px 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(92, 107, 192, 0.1), transparent 70%);
+    animation: visionRotate 30s linear infinite;
+    z-index: 0;
+}
+
+@keyframes visionRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.intro-content {
+    position: relative;
+    z-index: 1;
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Bloque de conclusión */
+.conclusion-section {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95));
+    border-radius: 25px;
+    padding: 60px 40px;
+    margin: 80px 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.conclusion-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(92, 107, 192, 0.1), transparent 70%);
+    animation: visionRotate 30s linear infinite;
+    z-index: 0;
+}
+
+.conclusion-content {
+    position: relative;
+    z-index: 1;
+}
+
+.conclusion-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.conclusion-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--accent-bright);
+    transition: width 0.3s ease;
+}
+
+.conclusion-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.highlight-text {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ============================================== */
+/* ESTILOS PARA LA SECCIÓN HERO */
+/* ============================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Usando una imagen de fondo y un gradiente oscuro para un look futurista */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/FondoMision.png') center/cover no-repeat;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Efecto de gradiente de color brillante */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Animaciones simples */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .mission-blocks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .intro-text {
+        font-size: 1.1rem;
+    }
+    
+    .mission-blocks {
+        grid-template-columns: 1fr;
+    }
+    
+    .conclusion-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================== */
+/* ESTILOS DEL FOOTER */
+/* ============================================== */
+.footer-minimal {
+    /* MODIFICACIÓN SOLICITADA: Fondo con el mismo degrade/animación que el fondo de la página */
+    background: radial-gradient(circle at 20% 80%, var(--accent-bright) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--accent) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, var(--dark-secondary) 0%, transparent 50%),
+                var(--dark-bg);
+    animation: bgShift 25s ease-in-out infinite;
+    background-attachment: fixed; /* CRUCIAL: Mantiene el fondo fijo para que coincida con el fondo general del body */
+    
+    color: #dfe6e9; /* Texto claro para fondo oscuro */
+    padding: 1.5rem 0; 
+    font-size: 1rem;
+    text-align: center;
+    
+    /* Línea delgada que separa el footer del contenido, usando el azul de acento */
+    border-top: 1px solid rgba(0, 153, 255, 0.2); 
+}
+
+.footer-content-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espacio reducido entre redes y copyright */
+}
+
+/* Estilos de los íconos sociales */
+.social-icons-minimal a {
+    color: #dfe6e9;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons-minimal a:hover {
+    /* Color gris claro en hover (Opción 2 de tu solicitud anterior) */
+    color: rgba(204, 204, 204, 1); 
+}
+
+/* Estilo del texto de copyright */
+.copyright-minimal {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Asegura que el elemento base footer no tenga estilos conflictivos */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3); /* Este es el estilo general. Lo ajustamos a algo más sutil. */
+    /* ... (rest of general footer styles should be clean, without margin-top) ... */
+    
+    /* Asegura que no tenga backdrop-filter o border-top conflictivos si .footer-minimal lo aplica */
+}
+
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    transition: opacity 0.5s ease-out; /* Transición para el efecto fade out */
+    opacity: 1;
+    pointer-events: all; /* Bloquea la interacción con el contenido de la página */
+}
+
+#page-loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Permite la interacción cuando desaparece */
+}
+
+.gif-container {
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+}
+
+.gif-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: -100px;
+}
+
+.loading-text {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+.loading-dotts {
+    display: flex;
+    gap: 8px;
+}
+
+.dott {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.dott:nth-child(1) { animation-delay: 0s; }
+.dott:nth-child(2) { animation-delay: 0.2s; }
+.dott:nth-child(3) { animation-delay: 0.4s; }
+
+/* Keyframes de animación del loader */
+@keyframes textPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes dotPulse {
+    0%, 60%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    30% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .gif-container {
+                width: 450px; /* Tamaño aumentado */
+                height: 450px; /* Tamaño aumentado */
+                top: 10%; /* Posición más arriba */
+            }
+    .loading-text {
+        font-size: 20px;
+    }
+    .loading-content {
+    margin-top: -80px; /* Mueve el texto hacia abajo para separarlo del GIF agrandado */
+}}

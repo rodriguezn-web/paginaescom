@@ -1,0 +1,1269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #001a33;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Fondo original con formas geométricas animadas */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 153, 255, 0.2) 0%, rgba(0, 51, 102, 0.1) 70%);
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+    background: radial-gradient(circle, rgba(0, 204, 255, 0.15) 0%, rgba(0, 102, 204, 0.05) 70%);
+    animation-duration: 25s;
+}
+
+.shape:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    top: 60%;
+    right: 10%;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, rgba(0, 51, 153, 0.05) 70%);
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.shape:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    bottom: 20%;
+    left: 15%;
+    background: radial-gradient(circle, rgba(0, 153, 255, 0.12) 0%, rgba(0, 51, 102, 0.05) 70%);
+    animation-duration: 22s;
+    animation-delay: -10s;
+}
+
+.shape:nth-child(4) {
+    width: 350px;
+    height: 350px;
+    top: 30%;
+    right: 30%;
+    background: radial-gradient(circle, rgba(0, 204, 255, 0.08) 0%, rgba(0, 102, 204, 0.03) 70%);
+    animation-duration: 28s;
+    animation-delay: -15s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -50px) scale(1.05); }
+    50% { transform: translate(-20px, 30px) scale(0.95); }
+    75% { transform: translate(40px, 20px) scale(1.02); }
+}
+
+.hexagon {
+    position: absolute;
+    width: 100px;
+    height: 55px;
+    background-color: rgba(0, 153, 255, 0.1);
+    margin: 27.5px 0;
+    animation: rotate 30s infinite linear;
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 28.87px solid rgba(0, 153, 255, 0.1);
+}
+
+.hexagon:after {
+    top: 100%;
+    border-top: 28.87px solid rgba(0, 153, 255, 0.1);
+}
+
+.hexagon:nth-child(5) {
+    top: 15%;
+    left: 20%;
+    animation-duration: 40s;
+}
+
+.hexagon:nth-child(6) {
+    top: 70%;
+    right: 25%;
+    animation-duration: 35s;
+    animation-direction: reverse;
+}
+
+.hexagon:nth-child(7) {
+    bottom: 15%;
+    left: 40%;
+    animation-duration: 45s;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.3), transparent);
+    animation: moveLine 15s infinite linear;
+}
+
+.line:nth-child(8) {
+    width: 200px;
+    top: 25%;
+    left: 0;
+    animation-duration: 18s;
+}
+
+.line:nth-child(9) {
+    width: 300px;
+    top: 65%;
+    right: 0;
+    animation-duration: 20s;
+    animation-delay: -5s;
+}
+
+.line:nth-child(10) {
+    width: 250px;
+    bottom: 30%;
+    left: 10%;
+    animation-duration: 22s;
+    animation-delay: -10s;
+}
+
+@keyframes moveLine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100vw); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Nuevo Estilo para el Header con Imagen de Fondo (Hero Section) --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    /* Reemplaza 'placeholder-school-bg.jpg' con el nombre de tu archivo de imagen */
+    background: url('images/fondo.png') center/cover no-repeat; 
+    min-height: 100vh; /* Altura mínima para que la imagen se vea bien */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para destacarlo */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Filtro azul oscuro/negro semitransparente para que el texto blanco resalte */
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content header {
+    padding: 0; 
+    margin-bottom: 0; /* Ya no hay botón debajo, se ajusta el margen */
+    animation: none;
+}
+
+.hero-content h1 {
+    font-size: 6rem; /* Hacer el título más grande en el hero */
+    margin-bottom: 5px;
+    letter-spacing: 5px;
+    
+}
+
+.hero-content .subtitle {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    margin-bottom: 80px; /* Margen para separar del contenido de abajo */
+}
+
+/* --- Fin Estilo Hero Section --- */
+
+header {
+    text-align: center;
+    padding: 40px 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* El h1 original ahora solo aplica si no está dentro de .hero-content */
+.container:not(.hero-content) h1 {
+    font-size: 4.5rem;
+    filter: drop-shadow(0 0 15px rgba(0, 153, 255, 0.7));
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* Modificación de la intro a intro-description */
+.intro-description {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 20px auto 40px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 102, 204, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 153, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 51, 102, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-description::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 204, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 8s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Sección de Modalidades AHORA ES VISIBLE POR DEFECTO */
+.modalidades-info {
+    opacity: 1; /* Mantiene la visibilidad */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #001a33; 
+}
+
+/* Se elimina .modalidades-info.hidden */
+
+.grid-modalidades { 
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    /* AJUSTE PARA CUATRO TARJETAS: Aumenta el max-width para que el contenedor general tenga suficiente espacio */
+    max-width: 1400px; 
+    margin: 0 auto;
+}
+
+.modalidad {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    height: 450px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    background: rgba(0, 51, 102, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 153, 255, 0.2);
+}
+
+.modalidad:hover {
+    transform: translateY(-15px) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(0, 102, 255, 0.4);
+}
+
+.modalidad::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 204, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.modalidad:hover::before {
+    opacity: 1;
+}
+
+.modalidad-content {
+    position: relative;
+    height: 100%;
+    padding: 30px 25px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.modalidad-icon {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+    transition: all 0.3s ease;
+    animation: float-icon 3s ease-in-out infinite;
+}
+
+@keyframes float-icon { 
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.modalidad:hover .modalidad-icon {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 25px rgba(0, 204, 255, 0.9));
+}
+
+.modalidad h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modalidad p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* NUEVO ESTILO: Tarjeta de Ancho Completo (MODIFICADO) */
+.modalidad-full {
+    flex: 0 0 100%; /* Ocupa todo el ancho en el contenedor flex */
+    max-width: 1080px; /* Ancho ajustado para alinearse con las 3 tarjetas superiores */
+    min-height: 200px; /* Altura mínima adecuada para el contenido */
+    height: auto;
+    
+    /* Reutiliza estilos base de .modalidad */
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    background: rgba(0, 51, 102, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 153, 255, 0.2);
+    margin-top: 30px; /* Espacio extra sobre la tarjeta */
+}
+
+.modalidad-full:hover {
+    transform: translateY(-8px) scale(1.005); /* Hover más sutil */
+    box-shadow: 0 18px 40px rgba(0, 102, 255, 0.4);
+}
+
+.modalidad-full .modalidad-content {
+    padding: 40px 50px;
+    flex-direction: column; /* CAMBIADO: Apila los elementos verticalmente */
+    justify-content: center;
+    align-items: center; /* Centra horizontalmente todo el contenido */
+    text-align: center; /* Alinea el texto al centro */
+    gap: 15px;
+    height: auto;
+}
+
+/* Se eliminan los estilos del icono */
+/* .modalidad-full .modalidad-icon ya no es necesario */
+
+.modalidad-full h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.modalidad-full p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Espacio antes del botón */
+    width: 100%; /* Asegura que el texto use todo el ancho de su contenedor de padding */
+    max-width: 900px; /* Opcional: limita el ancho del texto para mejor lectura en pantallas muy grandes */
+}
+
+.modalidad-full .btn {
+    margin-top: 20px;
+    align-self: center; /* Asegura que el botón esté centrado */
+    min-width: 250px; /* Le da un ancho visible al botón */
+}
+
+/* FIN NUEVO ESTILO: Tarjeta de Ancho Completo */
+
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(90deg, #0099ff, #0066cc);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+    white-space: nowrap;
+    min-width: 200px;
+    margin-top: auto;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #00ccff, #0099ff);
+    z-index: -1;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 153, 255, 0.6);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #004080, #001a33);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 153, 255, 0.3);
+    animation: modalOpen 0.5s ease;
+}
+
+@keyframes modalOpen {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #00ccff;
+    transform: rotate(90deg);
+}
+
+.modal h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00ccff;
+    text-align: center;
+}
+
+.modal p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.modal ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.modal li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.modal li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00ccff;
+    font-weight: bold;
+}
+
+/* SE ELIMINA el estilo para .discover-profile */
+/* RESPONSIVIDAD: Ajuste de layout para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    .form-row {
+        flex-wrap: wrap;
+    }
+    
+    .form-field {
+        flex: 0 0 calc(50% - 10px);
+    }
+    
+    /* Asegura que el campo único siga ocupando el 100% */
+    .form-field.full-width {
+        flex: 0 0 100%;
+    }
+
+    /* RESPONSIVIDAD para la tarjeta completa */
+    .modalidad-full {
+        max-width: 90%; /* Se asegura de que no se extienda demasiado en tabletas */
+    }
+    
+    .modalidad-full .modalidad-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .modalidad-full .btn {
+        margin-top: 20px;
+        align-self: center;
+    }
+}
+
+/* RESPONSIVIDAD: Ajuste de layout para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 50px;
+    }
+    
+    /* Se elimina el estilo del botón hero-btn */
+
+    .modalidad {
+        min-width: 100%; /* Hace que las tarjetas ocupen todo el ancho disponible */
+        max-width: 100%;
+        height: 420px;
+        box-sizing: border-box;
+    }
+    
+    .btn {
+        padding: 16px 30px;
+        font-size: 1.1rem;
+        min-width: 180px;
+    }
+    
+    .grid-modalidades {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%; /* Asegura que no exceda el contenedor */
+        padding: 0 10px; /* Reduce el padding para pantallas pequeñas */
+        box-sizing: border-box;
+    }
+    .modalidad-full {
+        max-width: 100%; /* Asegura que no exceda el contenedor */
+        padding: 0 10px; /* Reduce el padding */
+        box-sizing: border-box;
+    }
+
+    .modalidad-full .modalidad-content {
+        padding: 30px 15px; /* Reduce el padding interno */
+        text-align: center;
+    }
+}
+
+/*body {
+    background: url(ftoesc.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999; 
+    box-sizing: border-box;
+    /* CAMBIO CLAVE: Evita que el contenido se recorte dentro del header */
+    overflow: visible;
+}
+
+
+.header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0,0,0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255, .4),
+    transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+/* ESTILO DEL LOGO (CONTENEDOR DEL ENLACE) */
+.logo{
+    text-decoration: none;
+    font-weight: 700;
+    display: flex; /* Asegura que la imagen esté bien centrada */
+    align-items: center;
+}
+
+/* ESTILO DE LA IMAGEN DENTRO DEL LOGO */
+.logo img {
+    height: 2.5rem; /* Ajusta la altura de la imagen en la barra */
+    width: auto;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.8rem;
+}
+
+/* ------------------------------------- */
+/* --- ESTILOS PARA MENÚS DESPLEGABLES (DROPDOWN) - ESCRITORIO --- */
+/* ------------------------------------- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.8rem;
+}
+
+.dropdown > a {
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    background: rgba(0,0,0, .7); 
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 10000;
+    border-radius: 5px;
+    padding: 5px 0; 
+}
+
+.dropdown-content a {
+    color: aliceblue;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-weight: 400;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Muestra el submenú al pasar el ratón en escritorio */
+}
+
+.navbar {
+    /* CAMBIO CLAVE: Evita que el menú desplegable se recorte */
+    overflow: visible;
+}
+
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: aliceblue;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+    
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        overflow-x: hidden; /* Evita desbordamiento horizontal */
+        transition: height 0.3s ease;
+        box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+    }
+
+    #check:checked~.navbar {
+        height: 100vh; 
+        overflow-y: auto; 
+    }
+
+    /* Reglas para los elementos de navegación en móvil */
+    .navbar a,
+    .dropdown {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+    
+    /* ESTILOS DE LOS CONTENEDORES DROPDOWN EN MÓVIL */
+    .dropdown {
+        margin: 1.5rem 0;
+        display: block;
+    }
+
+    .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        background: transparent;
+        backdrop-filter: none;
+        padding: 0;
+        transform: none;
+        max-width: 100%; /* Limita el ancho al contenedor */
+        box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+    }
+
+    .dropdown-content a {
+        text-align: left;
+        padding: 8px 16px;
+        padding-left: 40px; /* Reduce la indentación para evitar desbordamiento */
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        width: 100%; /* Asegura que los enlaces no excedan el contenedor */
+        box-sizing: border-box;
+    }
+    
+    /* Aseguramos que el enlace principal no tenga el margen de los otros */
+    .dropdown-toggle {
+        margin: 1.5rem 0;
+    }
+}
+
+/* ------------------------------------------- */
+/* --- ESTILOS PIE DE PÁGINA MÍNIMAL Y BAJO --- */
+/* ------------------------------------------- */
+
+.footer-minimal {
+    /* CAMBIO CLAVE: Usa el color de fondo exacto de la página */
+    background-color: #001a33; 
+    
+    /* Eliminar el backdrop-filter para que se vea sólido y se mezcle */
+    /* backdrop-filter: blur(10px); */ 
+    
+    color: #dfe6e9;
+    padding: 1.5rem 0; 
+    font-size: 1rem;
+    text-align: center;
+    
+    /* Línea delgada que separa el footer del contenido, usando el azul de acento */
+    border-top: 1px solid rgba(0, 153, 255, 0.2); 
+}
+
+/* ... (el resto de los estilos del footer-minimal) ... */
+
+/* Asegúrate de que el fondo del body esté bien configurado para que no haya espacios blancos */
+
+.footer-content-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espacio reducido entre redes y copyright */
+}
+
+/* Estilos de los íconos sociales */
+.social-icons-minimal a {
+    color: #dfe6e9;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons-minimal a:hover {
+    /* Color gris claro en hover (Opción 2 de tu solicitud anterior) */
+    color: rgba(204, 204, 204, 1); 
+}
+
+/* Estilo del texto de copyright */
+.copyright-minimal {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Asegura que el elemento base footer no tenga estilos conflictivos */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3); /* Este es el estilo general. Lo ajustamos a algo más sutil. */
+    /* ... (rest of general footer styles should be clean, without margin-top) ... */
+    
+    /* Asegura que no tenga backdrop-filter o border-top conflictivos si .footer-minimal lo aplica */
+}
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Asegura que esté por encima de todo */
+    transition: opacity 0.5s ease-out; /* Transición para el efecto fade out */
+    opacity: 1;
+    pointer-events: all; /* Bloquea la interacción con el contenido de la página */
+}
+
+#page-loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Permite la interacción cuando desaparece */
+}
+
+.gif-container {
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+}
+
+.gif-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: -100px;
+}
+
+.loading-text {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+.loading-dotts {
+    display: flex;
+    gap: 8px;
+}
+
+.dott {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.dott:nth-child(1) { animation-delay: 0s; }
+.dott:nth-child(2) { animation-delay: 0.2s; }
+.dott:nth-child(3) { animation-delay: 0.4s; }
+
+/* Keyframes de animación del loader */
+@keyframes textPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes dotPulse {
+    0%, 60%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    30% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .gif-container {
+                width: 450px; /* Tamaño aumentado */
+                height: 450px; /* Tamaño aumentado */
+                top: 10%; /* Posición más arriba */
+            }
+    .loading-text {
+        font-size: 20px;
+    }
+    .loading-content {
+    margin-top: -80px; /* Mueve el texto hacia abajo para separarlo del GIF agrandado */
+}}
+
+@media (max-width: 768px) {
+    .line {
+        max-width: 50vw; /* Reduce el ancho de las líneas en móvil */
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.3), transparent);
+        animation: moveLine 15s infinite linear;
+    }
+
+    @keyframes moveLine {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(calc(100vw - 50vw)); } /* Ajusta según el ancho de la línea */
+    }
+
+    .shape {
+        max-width: 50vw; /* Reduce el tamaño de las formas en móvil */
+        max-height: 50vw;
+    }
+
+    .hexagon {
+        width: 80px; /* Reduce el tamaño de los hexágonos */
+        height: 44px;
+        margin: 22px 0;
+    }
+
+    .hexagon:before {
+        border-bottom: 23.09px solid rgba(0, 153, 255, 0.1);
+    }
+
+    .hexagon:after {
+        border-top: 23.09px solid rgba(0, 153, 255, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background: url(ftoesc.jpeg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden; /* Refuerza la eliminación de desbordamiento */
+    }
+
+    .hero-section {
+        width: 100%;
+        background: url('images/fondo.png') center/cover no-repeat;
+        min-height: 100vh;
+        padding: 80px 10px; /* Reduce el padding en móvil */
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .gif-container {
+        width: 100%; /* Ajusta al ancho de la pantalla */
+        max-width: 300px; /* Limita el tamaño máximo */
+        height: auto; /* Mantiene la proporción */
+        top: 10%;
+    }
+
+    .gif-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .loading-content {
+        margin-top: -80px;
+    }
+}
+@media (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+@media (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        overflow-x: hidden;
+        transition: height 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        background: transparent;
+        backdrop-filter: none;
+        padding: 0;
+        transform: none;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dropdown-content a {
+        text-align: left;
+        padding: 8px 16px;
+        padding-left: 40px;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .line {
+        max-width: 50vw;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.3), transparent);
+        animation: moveLine 15s infinite linear;
+    }
+
+    @keyframes moveLine {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(calc(100vw - 50vw)); }
+    }
+
+    .shape {
+        max-width: 50vw;
+        max-height: 50vw;
+    }
+
+    .hexagon {
+        width: 80px;
+        height: 44px;
+        margin: 22px 0;
+    }
+
+    .hexagon:before {
+        border-bottom: 23.09px solid rgba(0, 153, 255, 0.1);
+    }
+
+    .hexagon:after {
+        border-top: 23.09px solid rgba(0, 153, 255, 0.1);
+    }
+
+    .grid-modalidades {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .modalidad {
+        min-width: 100%;
+        max-width: 100%;
+        height: 420px;
+        box-sizing: border-box;
+    }
+
+    .modalidad-full {
+        max-width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .modalidad-full .modalidad-content {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    body {
+        background: url(ftoesc.jpeg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .hero-section {
+        width: 100%;
+        background: url('images/fondo.png') center/cover no-repeat;
+        min-height: 100vh;
+        padding: 80px 10px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .gif-container {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        top: 10%;
+    }
+
+    .gif-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .loading-content {
+        margin-top: -80px;
+    }
+}

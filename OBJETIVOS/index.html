@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJETIVOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../images/flaticon.png"> 
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+</head>
+<body>
+    <div id="page-loader">
+      <div class="gif-container">
+          <img src="../images/carga.gif" alt="Loading GIF"> 
+      </div>
+
+      <div class="loading-content">
+          <div class="loading-text">CARGANDO</div>
+          
+          <div class="loading-dotts">
+              <div class="dott"></div>
+              <div class="dott"></div>
+              <div class="dott"></div>
+          </div>
+      </div>
+  </div>
+     <header class="header">
+    <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo de la Institución"></a>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+    </label>
+
+     <nav class="navbar">
+            <a href="../index.html" style="--i:0;">Inicio</a>
+
+            <div class="dropdown" id="oferta-dropdown" style="--i:1;">
+                <a href="#" class="dropdown-toggle">Oferta educativa</a> 
+                <div class="dropdown-content">
+                    <a href="../NIVELMEDIO/index.html">Nivel Medio</a>
+                    <a href="../NIVELSUPERIOR/index.html">Nivel Superior</a>
+                </div>
+            </div>
+
+            <div class="dropdown" id="institucion-dropdown" style="--i:2;">
+                <a href="#" class="dropdown-toggle">Institución</a>
+                <div class="dropdown-content">
+                    <a href="../HISTORIA/index1.html">Historia</a>
+                    <a href="index.html">Objetivos</a>
+                    <a href="../MISIÓN/index.html">Mision</a>
+                </div>
+            </div>
+
+            <a href="../GALERIA/index.html" style="--i:3;">Galeria</a>
+            <a href="../CONTACTO/index.html" style="--i:4;">Contacto</a>
+        </nav>
+</header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Objetivos</h1>
+            <p>Lineamientos que guían nuestro quehacer institucional</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        
+        <div class="objectives-grid">
+            <div class="objective-card">
+                <div class="objective-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <h2 class="objective-title">Orientar</h2>
+                <p class="objective-description">
+                    Para que los egresados puedan elegir su destino, haciendo jugar dentro de tal decisión sus condiciones, aptitudes y vocación en consonancia con la situación ambiental y las necesidades previsibles de la comunidad nacional a la que pertenecen.
+                </p>
+                <div class="objective-highlight">
+                    Guiando hacia un futuro con propósito y coherencia
+                </div>
+            </div>
+            
+            <div class="objective-card">
+                <div class="objective-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h2 class="objective-title">Capacitar</h2>
+                <p class="objective-description">
+                    En el dominio de un conjunto de elementos culturales instrumentales que para nuestro tiempo y para las condiciones presumibles del futuro inmediato resultan absolutamente indispensables.
+                </p>
+                <div class="objective-highlight">
+                    Herramientas esenciales para el presente y el futuro
+                </div>
+            </div>
+            
+            <div class="objective-card">
+                <div class="objective-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h2 class="objective-title">Formar</h2>
+                <p class="objective-description">
+                    Personalidades éticamente equilibradas, responsables y autónomas para la vida personal y social, la cual involucra a la vida familiar cívica y cultural.
+                </p>
+                <div class="objective-highlight">
+                    Cimientos morales para una vida plena y responsable
+                </div>
+            </div>
+        </div>
+        
+        <div class="vision-section">
+            <div class="vision-content">
+                <p class="vision-text">
+                    Para lograr esos objetivos, la escuela debe abandonar definitivamente su pretensión de dar visiones completas del saber y fomentar en los alumnos aptitudes para comprender la realidad y comprometerse a actuar frente a ella.
+                </p>
+                <p class="vision-quote">
+                    Se tenderá entonces a la formación de hombres y mujeres hábiles y conscientes de los problemas socioeconómicos, culturales y ambientales, de una personalidad moral que les permita actuar intachablemente en la vida, impidiendo dentro de la esfera de acción de cada uno de ellos, todo fraude o práctica dolosa que redunde en perjuicio del bien común.
+                </p>
+                <p class="vision-text">
+                    Formamos ciudadanos comprometidos con su entorno, capaces de transformar la realidad con conocimiento ético y responsabilidad social.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="jcLNMMsv-JgTgPDX_fjzf";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+<footer class="footer-minimal">
+    <div class="footer-content-minimal">
+        
+        <div class="social-icons-minimal">
+            <a href="https://www.facebook.com/comerciogalvez" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/escom44" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <p class="copyright-minimal">&copy; 2025 ESCOM 44. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</html>

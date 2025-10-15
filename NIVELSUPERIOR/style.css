@@ -1,0 +1,1332 @@
+:root {
+    --violeta: #6a0dad;
+    --violeta-claro: #9d4edd;
+    --naranja: #ff6500;
+    --naranja-claro: #ff9a40;
+    --gris-oscuro: #2d3436;
+    --gris-claro: #dfe6e9;
+    --blanco: #ffffff;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--gris-oscuro);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/fondosup.png') center/cover no-repeat;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.cta-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: all 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.cta-btn:hover::before {
+    transform: translateX(0);
+}
+
+.sistemas-btn {
+    background: linear-gradient(45deg, var(--violeta), var(--violeta-claro));
+    color: white;
+    box-shadow: 0 5px 15px rgba(106, 13, 173, 0.4);
+}
+
+.sistemas-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(106, 13, 173, 0.6);
+}
+
+.gestion-btn {
+    background: linear-gradient(45deg, var(--naranja), var(--naranja-claro));
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 101, 0, 0.4);
+}
+
+.gestion-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 101, 0, 0.6);
+}
+
+.carrera-section {
+    padding: 5rem 0;
+    display: none;
+}
+
+.carrera-section.active {
+    display: block;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.sistemas-section .section-header h2::after {
+    background: var(--violeta);
+}
+
+.gestion-section .section-header h2::after {
+    background: var(--naranja);
+}
+
+.tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-header {
+    padding: 1.5rem;
+    color: white;
+    position: relative;
+}
+
+.sistemas-section .tarjeta-header {
+    background: linear-gradient(45deg, var(--violeta), var(--violeta-claro));
+}
+
+.gestion-section .tarjeta-header {
+    background: linear-gradient(45deg, var(--naranja), var(--naranja-claro));
+}
+
+.tarjeta-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-body {
+    padding: 1.5rem;
+}
+
+.tarjeta-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tarjeta-body li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--gris-claro);
+    display: flex;
+    align-items: center;
+}
+
+.tarjeta-body li:last-child {
+    border-bottom: none;
+}
+
+.tarjeta-body li i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.sistemas-section .tarjeta-body li i {
+    color: var(--violeta);
+}
+
+.gestion-section .tarjeta-body li i {
+    color: var(--naranja);
+}
+
+.timeline {
+    position: relative;
+    margin: 4rem 0;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--gris-claro);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 3rem;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: scale(1.03);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -15px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-left-color: white;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-right-color: white;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid var(--gris-claro);
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.sistemas-section .timeline-dot {
+    border-color: var(--violeta);
+}
+
+.gestion-section .timeline-dot {
+    border-color: var(--naranja);
+}
+
+.info-practica, .info-carrera {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 4rem 0;
+    box-shadow: var(--sombra);
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid var(--gris-claro);
+    margin-bottom: 2rem;
+}
+
+.tab {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab:hover {
+    color: var(--violeta);
+}
+
+.gestion-section .tab:hover {
+    color: var(--naranja);
+}
+
+.tab.active {
+    color: var(--violeta);
+}
+
+.gestion-section .tab.active {
+    color: var(--naranja);
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--violeta);
+}
+
+.gestion-section .tab.active::after {
+    background: var(--naranja);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.cuestionario {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 4rem 0;
+    box-shadow: var(--sombra);
+}
+
+.cuestionario h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.pregunta {
+    margin-bottom: 2rem;
+}
+
+.pregunta h4 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.opcion {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    background: var(--gris-claro);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.opcion:hover {
+    background: var(--violeta-claro);
+    color: white;
+}
+
+.gestion-section .opcion:hover {
+    background: var(--naranja-claro);
+}
+
+.opcion.selected {
+    background: var(--violeta-claro);
+    color: white;
+}
+
+.gestion-section .opcion.selected {
+    background: var(--naranja);
+}
+
+.resultado {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+}
+
+.resultado.show {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.sistemas-section .resultado {
+    background: rgba(106, 13, 173, 0.1);
+    border: 2px solid var(--violeta);
+}
+
+.gestion-section .resultado {
+    background: rgba(255, 101, 0, 0.1);
+    border: 2px solid var(--naranja);
+}
+
+footer {
+    background: var(--gris-oscuro);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--violeta);
+    transform: translateY(-5px);
+}
+
+.gestion-section .social-icons a:hover {
+    background: var(--naranja);
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 80%;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::after {
+        display: none;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::after {
+        display: none;
+    }
+    
+    .timeline-dot {
+        left: 10px !important;
+    }
+    
+    .hexagono {
+        width: 150px;
+        height: 170px;
+    }
+}
+
+.accordion-header {
+    background-color: var(--blanco);
+    padding: 15px;
+    border-bottom: 1px solid var(--gris-claro);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f0f0f0;
+}
+
+.accordion-header i {
+    margin-right: 10px;
+    color: var(--violeta);
+}
+
+.accordion-content {
+    background-color: var(--blanco);
+    padding: 0 15px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px; 
+    padding: 15px;
+    transition: max-height 0.4s ease-in, padding 0.4s ease-in;
+}
+
+.accordion-content p {
+    margin: 0;
+    line-height: 1.6;
+} 
+
+.cuestionario .opcion.gestion-opcion:hover {
+    background: var(--naranja-claro); 
+    color: white;
+}
+
+.cuestionario .opcion.gestion-opcion.selected {
+    background: var(--naranja); 
+    color: white;
+}
+
+
+body {
+    background: url(ftoesc.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+
+.header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0,0,0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255, .4),
+    transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+/* ESTILO DEL LOGO (CONTENEDOR DEL ENLACE) */
+.logo{
+    text-decoration: none;
+    font-weight: 700;
+    display: flex; /* Asegura que la imagen esté bien centrada */
+    align-items: center;
+}
+
+/* ESTILO DE LA IMAGEN DENTRO DEL LOGO */
+.logo img {
+    height: 2.5rem; /* Ajusta la altura de la imagen en la barra */
+    width: auto;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.8rem;
+}
+
+/* ------------------------------------- */
+/* --- ESTILOS PARA MENÚS DESPLEGABLES (DROPDOWN) - ESCRITORIO --- */
+/* ------------------------------------- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.8rem;
+}
+
+.dropdown > a {
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    background: rgba(0,0,0, .7); 
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 200;
+    border-radius: 5px;
+    padding: 5px 0; 
+}
+
+.dropdown-content a {
+    color: aliceblue;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-weight: 400;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Muestra el submenú al pasar el ratón en escritorio */
+}
+
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: aliceblue;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+        z-index: 1000;
+    }
+    
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+        z-index: 1000;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0; 
+        background: rgba(0,0,0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 100vh; 
+        overflow-y: auto; 
+    }
+
+    /* Reglas para los elementos de navegación en móvil */
+    .navbar a,
+    .dropdown {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+    
+    /* ESTILOS DE LOS CONTENEDORES DROPDOWN EN MÓVIL */
+    .dropdown {
+        margin: 1.5rem 0;
+        display: block;
+    }
+
+    .dropdown-content {
+        /* Ocultar submenú por defecto en móvil */
+        display: block; 
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out; 
+        
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        background: transparent;
+        backdrop-filter: none;
+        padding: 0;
+        transform: none;
+    }
+
+    /* ESTILO DE LOS SUBENLACES EN MÓVIL (Indentación) */
+    .dropdown-content a {
+        text-align: left; 
+        padding: 8px 16px; 
+        padding-left: 60px; /* INDENTACIÓN */
+        font-size: 1rem; 
+        margin: 0.5rem 0; 
+        
+        opacity: 1; 
+        transform: none;
+    }
+    
+    /* Aseguramos que el enlace principal no tenga el margen de los otros */
+    .dropdown-toggle {
+        margin: 1.5rem 0;
+    }
+}
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    transition: opacity 0.5s ease-out; /* Transición para el efecto fade out */
+    opacity: 1;
+    pointer-events: all; /* Bloquea la interacción con el contenido de la página */
+}
+
+#page-loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Permite la interacción cuando desaparece */
+}
+
+.gif-container {
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+}
+
+.gif-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: -100px;
+}
+
+.loading-text {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+.loading-dotts {
+    display: flex;
+    gap: 8px;
+}
+
+.dott {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.dott:nth-child(1) { animation-delay: 0s; }
+.dott:nth-child(2) { animation-delay: 0.2s; }
+.dott:nth-child(3) { animation-delay: 0.4s; }
+
+/* Keyframes de animación del loader */
+@keyframes textPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes dotPulse {
+    0%, 60%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    30% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .gif-container {
+        width: 150px;
+        height: 150px;
+    }
+    .loading-text {
+        font-size: 20px;
+    }
+}
+footer-minimal {
+    /* CAMBIO CLAVE: Usa el color de fondo exacto de la página */
+    background-color: #001a33; 
+    
+    /* Eliminar el backdrop-filter para que se vea sólido y se mezcle */
+    /* backdrop-filter: blur(10px); */ 
+    
+    color: #dfe6e9;
+    padding: 1.5rem 0; 
+    font-size: 1rem;
+    text-align: center;
+    
+    /* Línea delgada que separa el footer del contenido, usando el azul de acento */
+    border-top: 1px solid rgba(0, 153, 255, 0.2); 
+}
+
+/* ... (el resto de los estilos del footer-minimal) ... */
+
+/* Asegúrate de que el fondo del body esté bien configurado para que no haya espacios blancos */
+
+.footer-content-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espacio reducido entre redes y copyright */
+}
+
+/* Estilos de los íconos sociales */
+.social-icons-minimal a {
+    color: #dfe6e9;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons-minimal a:hover {
+    /* Color gris claro en hover (Opción 2 de tu solicitud anterior) */
+    color: rgba(204, 204, 204, 1); 
+}
+
+/* Estilo del texto de copyright */
+.copyright-minimal {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Asegura que el elemento base footer no tenga estilos conflictivos */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3); /* Este es el estilo general. Lo ajustamos a algo más sutil. */
+    /* ... (rest of general footer styles should be clean, without margin-top) ... */
+    
+    /* Asegura que no tenga backdrop-filter o border-top conflictivos si .footer-minimal lo aplica */
+}
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Asegura que esté por encima de todo */
+    transition: opacity 0.5s ease-out; /* Transición para el efecto fade out */
+    opacity: 1;
+    pointer-events: all; /* Bloquea la interacción con el contenido de la página */
+}
+
+#page-loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Permite la interacción cuando desaparece */
+}
+
+.gif-container {
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+}
+
+.gif-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: -100px;
+}
+
+.loading-text {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+.loading-dotts {
+    display: flex;
+    gap: 8px;
+}
+
+.dott {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.dott:nth-child(1) { animation-delay: 0s; }
+.dott:nth-child(2) { animation-delay: 0.2s; }
+.dott:nth-child(3) { animation-delay: 0.4s; }
+
+/* Keyframes de animación del loader */
+@keyframes textPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes dotPulse {
+    0%, 60%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    30% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .gif-container {
+                width: 450px; /* Tamaño aumentado */
+                height: 450px; /* Tamaño aumentado */
+                top: 10%; /* Posición más arriba */
+            }
+    .loading-text {
+        font-size: 20px;
+    }
+    .loading-content {
+    margin-top: -80px; /* Mueve el texto hacia abajo para separarlo del GIF agrandado */
+}}
+/* === INICIO DE CORRECCIÓN DE MENÚ HAMBURGUESA (Alineación y Despliegue Móvil) === */
+
+@media (max-width: 768px) {
+    /* 1. Corrección de Despliegue: Hace que el menú sea de pantalla completa (más robusto) */
+    /* La animación se realiza ahora moviendo el menú desde la izquierda (off-screen) */
+    .navbar {
+        left: -100%;
+        transition: left .5s ease;
+    }
+
+    #check:checked~.navbar {
+        left: -100%;
+        transition: left .5s ease;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.5) !important; /* Fondo negro con 50% de opacidad */
+        backdrop-filter: blur(50px) !important; /* Añade el efecto de desenfoque */
+        padding-top: 5rem !important;
+        z-index: 99 !important;
+        overflow-y: auto !important;
+    }
+
+    /* 2. Corrección de Alineación: FUERZA a los contenedores a apilarse verticalmente (uno debajo del otro) */
+    /* Esto soluciona que 'Inicio', 'Oferta educativa', etc. se vean de lado */
+    .navbar a,
+    .dropdown {
+        display: block !important; /* Fuerza a ser elemento de bloque */
+        width: 100% !important; /* Asegura que ocupe el ancho completo */
+        margin: 1.5rem 0 !important; /* Refuerza el espaciado vertical */
+        text-align: center !important; /* Centra el texto */
+    }
+    
+    /* 3. Corrección de Sub-menú Desplegable (Dropdown-content) */
+    .dropdown-content a {
+        text-align: center !important; /* Centra los sub-links (Nivel Medio, Nivel Superior, etc.) */
+        padding-left: 16px !important; /* Elimina la indentación excesiva */
+        margin: 0.3rem 0 !important;
+    }
+}
+/* Corrección adicional para eliminar la barra lateral blanca/scroll horizontal */
+html, body {
+    overflow-x: hidden !important;
+}
+
+/*fix*/
+/* Corrección para eliminar la sobrecarga horizontal solo en versión móvil */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .carrera-section, .cuestionario {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Corrección para las tablas de materias en versión móvil */
+@media (max-width: 768px) {
+    /* Asegura que el contenedor table-responsive no cause desbordamiento */
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
+    }
+
+    /* Ajusta la tabla para que se adapte al ancho del contenedor */
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        font-size: 0.9rem; /* Reduce ligeramente el tamaño de fuente para mejor legibilidad */
+    }
+
+    /* Ajusta las celdas de la tabla */
+    .table th,
+    .table td {
+        padding: 0.5rem; /* Reduce el padding para ahorrar espacio */
+        white-space: normal; /* Permite el ajuste de texto */
+        word-wrap: break-word; /* Fuerza el ajuste de palabras largas */
+        word-break: break-word; /* Rompe palabras largas si es necesario */
+        text-align: left; /* Alinea el texto a la izquierda para mejor legibilidad en móvil */
+        vertical-align: middle;
+    }
+
+    /* Reduce el ancho mínimo de las columnas y asegura que el texto se ajuste */
+    .table th,
+    .table td {
+        min-width: 0; /* Evita anchos mínimos fijos */
+        max-width: 150px; /* Limita el ancho máximo de las celdas */
+    }
+
+    /* Asegura que el contenedor de la pestaña de materias no cause desbordamiento */
+    .tab-content #materias-sistemas,
+    .tab-content #materias-gestion {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Corrige el contenedor general para evitar desbordamiento */
+    .info-practica {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 1rem; /* Reduce el padding en móvil para ahorrar espacio */
+    }
+}
+
+/* Corrección para los botones de pestañas en versión móvil */
+@media (max-width: 768px) {
+    /* Asegura que el contenedor de pestañas no cause desbordamiento */
+    .tabs {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        flex-wrap: wrap; /* Permite que las pestañas se envuelvan si no caben */
+        gap: 0.5rem; /* Reduce el espacio entre pestañas */
+        justify-content: flex-start; /* Alinea las pestañas a la izquierda */
+        padding: 0.5rem 0; /* Reduce el padding vertical */
+        border-bottom: 1px solid var(--gris-claro); /* Mantiene el borde inferior más delgado */
+    }
+
+    /* Ajusta el estilo de las pestañas individuales */
+    .tab {
+        flex: 1 1 auto; /* Permite que las pestañas se ajusten dinámicamente */
+        min-width: 80px; /* Ancho mínimo para cada pestaña */
+        max-width: 33%; /* Limita el ancho para que quepan tres pestañas */
+        padding: 0.5rem 0.8rem; /* Reduce el padding para ahorrar espacio */
+        font-size: 0.9rem; /* Reduce el tamaño de fuente */
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    /* Asegura que el contenedor padre no cause desbordamiento */
+    .info-practica {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 0.8rem; /* Mantiene el padding reducido */
+    }
+
+    /* Asegura que las secciones de carrera no causen desbordamiento */
+    .carrera-section {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}

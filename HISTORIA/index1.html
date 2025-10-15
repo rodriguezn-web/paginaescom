@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/png" href="../images/flaticon.png"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HISTORIA</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* ------------------------------------------------ */
+      /* --- Contenido de style.css (Estilos del Libro) --- */
+      /* ------------------------------------------------ */
+
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+      /* Reset y Variables */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --bg-color: #0a0a0a;
+        --main-color: #808080;
+        --text-color: #000000;
+        --second-text-color: #000000;
+        --white-color: #ffffff;
+        --cover-color: linear-gradient(45deg, #1a237e, #283593);
+        --pages-color: #ffffff;
+        --terracota-color: #e27d60;
+        --border: 0.125rem solid var(--terracota-color);
+        --box-shadow: 0 0 0.6rem rgba(128, 128, 128, 0.2);
+      }
+      
+
+      .versionCel{
+        display: none;
+      }
+      @media (max-width: 768px) {
+            .versionPC {
+                /* Oculta el contenido de PC en pantallas pequeñas */
+                display: none;
+            }
+
+            .versionCel {
+                /* Muestra el contenido de celular en pantallas pequeñas */
+                display: block;
+            }
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #01579b 100%);
+    min-height: 100vh;
+    padding: 40px 0; /* Solo padding vertical. El horizontal lo manejaremos dentro. */
+    display: flex; /* Añadido */
+    flex-direction: column; /* Añadido */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container {
+    max-width: 900px;
+    background: linear-gradient(145deg, #2c3e50 0%, #1a1a1a 100%);
+    border-radius: 15px;
+    /* Aplicamos el padding lateral para que se vea el margen */
+    padding: 50px var(--padding-lateral-base); 
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 2px solid #3a5a7e;
+    flex-grow: 1; /* 🔥 Empuja el footer hacia abajo */
+    width: 100%; /* Permite que el margen del body lo controle */
+    margin-bottom: 50px; /* Espacio antes del footer */    
+}
+
+h1 {
+    color: #64b5f6;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: #90caf9;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.historia-contenido {
+    color: #ffffff;
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+.historia-contenido p {
+    margin-bottom: 20px;
+}
+
+.year {
+    color: #42a5f5;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    background: rgba(66, 165, 245, 0.2);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #64b5f6, transparent);
+    margin: 30px 0;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 30px 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .historia-contenido {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .year {
+        font-size: 1rem;
+    }
+
+    .divider {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 5px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .historia-contenido {
+        font-size: 0.9rem;
+    }
+}
+
+        }
+      /* Estilos del Body base (para la sección del libro) */
+      .book-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--bg-color);
+        color: var(--text-color);
+        overflow: hidden;
+      }
+      
+      /* Ajustes para alinear todas las páginas desde la misma altura */
+      .book-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+      }
+
+      .page-front,
+      .page-back {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .workeduc-box {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+      }
+
+      .workeduc-content {
+        margin-bottom: 15px;
+      }
+      
+      /* Estilos del Libro */
+      .wrapper {
+        position: relative;
+        width: 66rem;
+        height: 45rem;
+        padding: 2rem;
+        perspective: 250rem;
+        animation: show-animate 2s forwards;
+      }
+
+      @keyframes show-animate {
+        0%,
+        30% {
+          opacity: 0;
+          transform: rotate(-20deg);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+      }
+
+      .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: var(--cover-color);
+        box-shadow: var(--box-shadow);
+        border-top-left-radius: 0.6rem;
+        border-bottom-left-radius: 0.6rem;
+        transform-origin: right;
+      }
+      .cover.cover-left {
+        z-index: -1;
+      }
+      .cover.cover-right {
+        z-index: 100;
+        transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .cover.cover-right.turn {
+        transform: rotateY(180deg);
+      }
+
+      .book {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        perspective: 250rem;
+      }
+      .book .book-page {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background: var(--pages-color);
+        box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
+        display: flex;
+        padding: 2rem;
+      }
+      .book-page.page-left {
+        box-shadow: -0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
+      }
+      .profile-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .profile-page img {
+        max-width: 180px;
+        border-radius: 50%;
+        border: 0.25rem solid var(--main-color);
+        margin-bottom: 0.8rem;
+      }
+      .profile-page h1 {
+        font-size: 2.7rem;
+        line-height: 1;
+        color: var(--text-color);
+      }
+      .profile-page h3 {
+        font-size: 1.5rem;
+        color: var(--main-color);
+      }
+      .profile-page .social-media {
+        margin: 0.6rem 0 0.8rem;
+      }
+      .profile-page .social-media a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: transparent;
+        border: var(--border);
+        border-radius: 50%;
+        font-size: 1.3rem;
+        color: var(--main-color);
+        margin: 0 0.2rem;
+        transition: 0.5s;
+      }
+      .profile-page .social-media a:hover {
+        background: var(--main-color);
+        color: var(--white-color);
+      }
+      .profile-page p {
+        text-align: justify;
+        color: var(--text-color);
+      }
+      .profile-page .btn-box {
+        margin-top: 1.2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 9.5rem;
+        height: 3rem;
+        background: var(--main-color);
+        border: var(--border);
+        border-radius: 0.3rem;
+        font-size: 1rem;
+        color: var(--white-color);
+        font-weight: 500;
+        margin: 0 1rem;
+        transition: 0.5s;
+      }
+      .btn:hover {
+        background: transparent;
+        color: var(--main-color);
+      }
+      .btn-box .btn:nth-child(2) {
+        background: transparent;
+        color: var(--main-color);
+      }
+      .btn-box .btn:nth-child(2):hover {
+        background: var(--main-color);
+        color: var(--white-color);
+      }
+      .book-page.page-right {
+        position: absolute;
+        right: 0;
+        transform-style: preserve-3d;
+        transform-origin: left;
+        /* this is where we turn the pages as book */
+        transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .book-page.page-right.turn {
+        transform: rotateY(-180deg);
+      }
+      .book-page .page-front,
+      .book-page .page-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--pages-color);
+        padding: 1.5rem 2rem;
+      }
+      .book-page .page-front {
+        transform: rotateY(0deg) translateZ(1px);
+      }
+      .book-page .page-back {
+        transform: rotateY(180deg) translateZ(1px);
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+      }
+      .workeduc-box {
+        border-left: var(--border);
+      }
+      .workeduc-box .workeduc-content {
+        position: relative;
+
+        padding-left: 1.6rem;
+        margin-bottom: 1.2rem;
+      }
+      .workeduc-box .workeduc-content:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -0.65rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        background: var(--terracota-color);
+        border-radius: 50%;
+      }
+      .workeduc-content .year {
+        color: var(--terracota-color);
+      }
+      .workeduc-content .year i {
+        margin-right: 0.4rem;
+      }
+      .workeduc-content p {
+        color: var(--text-color);
+      }
+      .workeduc-content h3 {
+        color: var(--text-color);
+      }
+      .number-page {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--text-color);
+      }
+      .nextprev-btn {
+        position: absolute;
+        bottom: 0.9rem;
+        right: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+
+        cursor: pointer;
+        font-size: 2rem;
+        color: var(--second-text-color);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+      }
+      .nextprev-btn:hover {
+        color: var(--terracota-color);
+      }
+      .nextprev-btn.back {
+        left: 1.5rem;
+      }
+      .services-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .services-box .services-content {
+        flex: 1 1 10rem;
+        border: var(--border);
+        border-radius: 0.5rem;
+        text-align: center;
+        padding: 0.8rem 0.5rem 1.1rem;
+        transition: 0.3s ease;
+      }
+      .services-box .services-content:hover {
+        box-shadow: var(--box-shadow);
+      }
+
+      .services-content i {
+        font-size: 2.5rem;
+        color: var(--main-color);
+      }
+      .services-content h3 {
+        font-size: 1.1rem;
+        color: var(--text-color);
+      }
+      .services-content p {
+        margin: 0.2rem 0 0.8rem;
+        color: var(--text-color);
+      }
+      .services-content .btn {
+        width: 8rem;
+        height: 2.5rem;
+      }
+      .skills-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .skills-box .skills-content {
+        flex: 1 1 20rem;
+      }
+      .skills-content h3 {
+        font-size: 1.3rem;
+        line-height: 1;
+        margin-bottom: 0.6rem;
+        color: var(--text-color);
+      }
+      .skills-content .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .skills-content .content span {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        height: 5rem;
+        border: var(--border);
+        border-radius: 0.3rem;
+        font-weight: 600;
+        transition: 0.3s ease;
+      }
+      .skills-content .content span:hover {
+        box-shadow: var(--box-shadow);
+      }
+
+      .skills-content .content span i {
+        font-size: 3rem;
+        color: var(--main-color);
+      }
+      .portfolio-box .img-box {
+        display: flex;
+        width: 100%;
+        height: 15rem;
+
+        border: var(--border);
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      .portfolio-box .img-box img {
+        width: 100%;
+        object-fit: cover;
+        transition: 0.5s ease;
+      }
+      .portfolio-box .img-box:hover img {
+        transform: scale(1.1);
+      }
+      .portfolio-box .info-box {
+        margin: 1rem 0 1.5rem;
+      }
+      .portfolio-box .info-box .info-title {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .portfolio-box .info-box .info-title h3 {
+        font-size: 1.3rem;
+        color: var(--text-color);
+      }
+      .portfolio-box .info-box .info-title a {
+        display: flex;
+        align-items: center;
+        color: var(--main-color);
+      }
+      .portfolio-box .info-box .info-title a i {
+        margin-left: 0.3rem;
+      }
+      .portfolio-box .info-box p:nth-of-type(1) {
+        font-weight: 600;
+        color: var(--text-color);
+      }
+      .portfolio-box .btn-box {
+        display: flex;
+        justify-content: center;
+      }
+      .portfolio-box .btn-box .btn {
+        margin: 0 1.15rem;
+      }
+      .back-profile {
+        position: absolute;
+        bottom: 1.2rem;
+        right: 2rem;
+        width: 2rem;
+        height: 2rem;
+        background: transparent;
+        border: var(--border);
+        border-radius: 0.3rem;
+        font-size: 1.1rem;
+        color: var(--main-color);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+      }
+      .back-profile:hover {
+        background: var(--main-color);
+        color: var(--white-color);
+      }
+      .back-profile p {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(0.5);
+        font-size: 1rem;
+        color: var(--main-color);
+        opacity: 0;
+        transition: 0.5s;
+      }
+      .back-profile:hover p {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        top: -1.8rem;
+      }
+
+      /* Responsive del Libro */
+      @media screen and (max-width: 1024px) {
+        .wrapper {
+          width: 60rem;
+          height: 40rem;
+        }
+      }
+
+      /* ------------------------------------------------ */
+      /* --- Contenido de style1.css (Estilos de Portada y Header) --- */
+      /* ------------------------------------------------ */
+
+      /* Estilo general del body (solo la parte de fondo relevante para el contexto) */
+      /* Se ha movido el fondo de la foto de la escuela a la portada para que no afecte al libro */
+      /* Se usa una clase 'portada-body' para aplicar estos estilos SÓLO a la portada */
+      .portada-body {
+          background: url(ftoesc.jpeg) no-repeat; /* Cambiado de body a .portada-body */
+          background-size: cover;
+          background-position: center;
+          min-height: 100vh;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.3rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        box-sizing: border-box;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        z-index: -1;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .header:hover::after {
+        left: 100%;
+      }
+
+      /* ESTILO DEL LOGO (CONTENEDOR DEL ENLACE) */
+      .logo {
+        text-decoration: none;
+        font-weight: 700;
+        display: flex; /* Asegura que la imagen esté bien centrada */
+        align-items: center;
+      }
+
+      /* ESTILO DE LA IMAGEN DENTRO DEL LOGO */
+      .logo img {
+        height: 2.5rem; /* Ajusta la altura de la imagen en la barra */
+        width: auto;
+      }
+
+      .navbar a {
+        font-size: 1.15rem;
+        color: aliceblue;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 0 0.8rem;
+      }
+
+      /* ------------------------------------- */
+      /* --- ESTILOS PARA MENÚS DESPLEGABLES (DROPDOWN) - ESCRITORIO --- */
+      /* ------------------------------------- */
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin: 0 0.8rem;
+      }
+
+      .dropdown > a {
+        font-size: 1.15rem;
+        color: aliceblue;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 180px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(20px);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+        z-index: 200;
+        border-radius: 5px;
+        padding: 5px 0;
+      }
+
+      .dropdown-content a {
+        color: aliceblue;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        transition: background-color 0.3s;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block; /* Muestra el submenú al pasar el ratón en escritorio */
+      }
+
+      .icons {
+        position: absolute;
+        right: 5%;
+        font-size: 2.8rem;
+        color: aliceblue;
+        cursor: pointer;
+        display: none;
+      }
+
+      #check {
+        display: none;
+      }
+
+      @media (max-width: 992px) {
+        .header {
+          padding: 1.3rem 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .icons {
+          display: inline-flex;
+        }
+
+        #check:checked ~ .icons #menu-icon {
+          display: none;
+        }
+
+        .icons #close-icon {
+          display: none;
+        }
+
+        #check:checked ~ .icons #close-icon {
+          display: block;
+        }
+
+        .navbar {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background: rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(50px);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transition: 0.3s ease;
+        }
+
+        #check:checked ~ .navbar {
+          height: 100vh;
+          overflow-y: auto;
+        }
+
+        /* Reglas para los elementos de navegación en móvil */
+        .navbar a,
+        .dropdown {
+          display: block;
+          font-size: 1.1rem;
+          margin: 1.5rem 0;
+          text-align: center;
+        }
+
+        /* ESTILOS DE LOS CONTENEDORES DROPDOWN EN MÓVIL */
+        .dropdown {
+          margin: 1.5rem 0;
+          display: block;
+        }
+
+        .dropdown-content {
+          /* Ocultar submenú por defecto en móvil */
+          display: block;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+
+          position: static;
+          min-width: 100%;
+          box-shadow: none;
+          background: transparent;
+          backdrop-filter: none;
+          padding: 0;
+          transform: none;
+        }
+
+        /* ESTILO DE LOS SUBENLACES EN MÓVIL (Indentación) */
+        .dropdown-content a {
+          text-align: left;
+          padding: 8px 16px;
+          padding-left: 60px; /* INDENTACIÓN */
+          font-size: 1rem;
+          margin: 0.5rem 0;
+
+          opacity: 1;
+          transform: none;
+        }
+
+        /* Aseguramos que el enlace principal no tenga el margen de los otros */
+        .dropdown-toggle {
+          margin: 1.5rem 0;
+        }
+        
+        /* Clase 'open' para desplegar en móvil */
+        .dropdown.open .dropdown-content {
+            max-height: 500px; /* Valor grande para permitir el despliegue */
+        }
+      }
+
+      /* --- INICIO DE MODIFICACIÓN DE LA SECCIÓN PORTADA --- */
+      .portada {
+        min-height: 100vh; /* Ocupa el 100% de la altura de la vista */
+        width: 100%;
+
+        /* APLICAMOS LA IMAGEN DE FONDO A LA SECCIÓN ENTERA */
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(images/vintage.png) no-repeat center center;
+        background-size: cover; /* Asegura que la imagen cubra toda la sección */
+
+        padding-top: 6rem; /* Deja espacio para que el header fijo no tape el contenido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      /* Contenedor del Título y Subtítulo */
+      .contenido-portada {
+        text-align: center;
+        /* ELIMINAMOS EL FONDO DE LA CAJA INTERNA para que solo se vea la imagen de portada */
+        background: none;
+        padding: 0; /* Quitamos el padding si ya no hay fondo */
+        border-radius: 0;
+        backdrop-filter: none;
+      }
+      /* --- FIN DE MODIFICACIÓN DE LA SECCIÓN PORTADA --- */
+
+      /* Estilo del Título Principal */
+      .titulo-principal {
+        font-size: 3rem; /* Tamaño grande */
+        color: white;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        /* Mantenemos la sombra para que resalte sobre la imagen de fondo */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+      }
+
+      /* Estilo del Subtítulo */
+      .subtitulo {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 500;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
+      }
+
+      .barra-scroll {
+        position: absolute;
+        right: 2.5rem; /* Separación del borde derecho */
+        bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        z-index: 10;
+      }
+
+      .barra-scroll p {
+        margin-top: 5px;
+        writing-mode: vertical-lr; /* Gira el texto "SCROLL" */
+        transform: rotate(180deg);
+      }
+
+      .linea-scroll {
+        width: 2px;
+        height: 60px;
+        background-color: white;
+        animation: scrollAnimation 2s infinite ease-in-out;
+      }
+
+      /* Animación de la línea para darle un efecto de "pulso" */
+      @keyframes scrollAnimation {
+        0% {
+          transform: scaleY(0.1);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scaleY(0.1);
+          opacity: 0.5;
+        }
+      }
+
+      /* AJUSTES RESPONSIVE PARA MÓVILES (Oculta la barra de scroll si molesta) */
+      @media (max-width: 768px) {
+        .portada {
+          padding-top: 5rem;
+        }
+        .titulo-principal {
+          font-size: 2rem;
+        }
+        .subtitulo {
+          font-size: 1.2rem;
+        }
+        .barra-scroll {
+          display: none; /* Oculta la barra lateral en dispositivos pequeños */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="../index.html" class="logo"
+        ><img src="../images/logo.png" alt="Logo de la Institución"
+      /></a>
+
+      <input type="checkbox" id="check" />
+      <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+      </label>
+
+       <nav class="navbar">
+            <a href="../index.html" style="--i:0;">Inicio</a>
+
+            <div class="dropdown" id="oferta-dropdown" style="--i:1;">
+                <a href="#" class="dropdown-toggle">Oferta educativa</a> 
+                <div class="dropdown-content">
+                    <a href="../NIVELMEDIO/index.html">Nivel Medio</a>
+                    <a href="../NIVELSUPERIOR/index.html">Nivel Superior</a>
+                </div>
+            </div>
+
+            <div class="dropdown" id="institucion-dropdown" style="--i:2;">
+                <a href="#" class="dropdown-toggle">Institución</a>
+                <div class="dropdown-content">
+                    <a href="index1.html">Historia</a>
+                    <a href="../OBJETIVOS/index.html">Objetivos</a>
+                    <a href="../MISIÓN/index.html">Mision</a>
+                </div>
+            </div>
+
+            <a href="../GALERIA/index.html" style="--i:3;">Galeria</a>
+            <a href="../CONTACTO/index.html" style="--i:4;">Contacto</a>
+        </nav>
+    </header>
+    <div class="versionPC">
+      <section class="portada">
+        <div class="contenido-portada">
+          <h1 class="titulo-principal">PÁGINAS ABIERTAS</h1>
+          <h3 class="subtitulo">La historia continúa...</h3>
+        </div>
+        </section>
+      
+      <div class="book-body"> <div class="wrapper">
+          <div class="cover cover-left"></div>
+          <div class="cover cover-right"></div>
+          <div class="book">
+            <div class="book-page page-left">
+              <div class="profile-page">
+                <br />
+                <br />
+                <br />
+                <h1>Génesis Educativa</h1>
+                <br />
+                <h3>El comienzo del saber</h3>
+                <br />
+                <br />
+                <p>
+                  Toda gran comunidad se cimienta sobre pilares sólidos, y en
+                  Gálvez, uno de esos pilares inamovibles es, sin duda, la Escuela
+                  Superior de Comercio Nº 44. Más que un conjunto de edificios y
+                  aulas, esta institución representa un torrente ininterrumpido de
+                  conocimiento, sueños y esfuerzo que ha fluido a través de las
+                  décadas. Esta es la historia de cómo una visión audaz, nacida en
+                  1943, se convirtió en el faro educativo que hoy conocemos, un
+                  legado forjado por profesores, estudiantes y familias que
+                  creyeron en el poder transformador de la educación.
+                </p>
+                <div class="btn-box"></div>
+              </div>
+            </div>
+
+            <div class="book-page page-right turn" id="turn-1">
+              <div class="page-front">
+                <h1 class="title">Nuestra historia</h1>
+                <div class="workeduc-box">
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1943</span>
+                    <p>
+                      Comienza el 1er Año en la Escuela de Artes y Oficios de la
+                      Nacion bajo la direccion del Sr. Ignacio Sancho siendo
+                      Secretrio Justo A. Diana. Por la cantidad de inscriptos debio
+                      tomarse examen y se seleccionaron los 40 mejores.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1945</span>
+                    <h3></h3>
+                    <p>
+                      Fue separada de la escuela de Artes y Oficios (hoy E.N.E.T
+                      Nº1)24/12: Toma la posecion del cargo la directora de la
+                      Escuela Nacional de Comercio la Sra. Nelly Tascheret de
+                      Riveros.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1946</span>
+                    <h3></h3>
+                    <p>
+                      La 1ª Sociedad Cooperadora quedó constituida el 30 de marzo,
+                      con la Sra. Nelly T. Q. de Riveros como Asesora y el Sr.
+                      Osvaldo Lotto como Presidente. El cuerpo directivo principal
+                      se completó con el Sr. Félix Mainetti (Vice-Presidente), el
+                      Sr. Miguel Zapata (Secretario) y el Sr. Antonio Trudo
+                      (Tesorero).
+                    </p>
+                  </div>
+                </div>
+                <span class="number-page">1</span>
+                <span class="nextprev-btn" data-page="turn-1"
+                  ><i class="bx bx-chevron-right"></i
+                ></span>
+              </div>
+
+              <div class="page-back">
+                <div class="workeduc-box">
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1947</span>
+                    <p>
+                      El 14 de abril, la escuela implementó turnos (mañana para 1º,
+                      2º y 3º año, y tarde para 4º y 5º año) debido a la falta de
+                      salones en la Escuela Técnica de Oficios. Poco después, el 25
+                      de mayo, se realizó la bendición de la bandera donada por el
+                      Ministerio, con una misa de campaña a cargo del Pbro. Juan
+                      Giampoli
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1953</span>
+                    <p>
+                      Comienza a funcionar la escuela en el edificio de la calle
+                      Lisandro de la Torre, propiedad de la Sra. Ángela María
+                      Molinari
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1960</span>
+                    <p>
+                      La directora del establecimiento Sra. Angélica B. de Baetti
+                      reorganiza el Coro Polifónico. Comienza el 1º curso de
+                      Peritos Mercantiles Nocturno.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1964</span>
+                    <p>
+                      Julio: La Sociedad cooperadora adquiere el inmueble ubicado
+                      en la calle Sarmiento 755
+                    </p>
+                  </div>
+                </div>
+
+                <span class="number-page">2</span>
+                <span class="nextprev-btn back" data-page="turn-1"
+                  ><i class="bx bx-chevron-left"></i
+                ></span>
+              </div>
+            </div>
+
+            <div class="book-page page-right turn" id="turn-2">
+              <div class="page-front">
+                <div class="workeduc-box">
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1966</span>
+                    <p>
+                      Se Inauguro el nuevo edificio con la ayuda del Batallón de
+                      Ingenieros de Construcción 121 de Santo Tomé.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1972</span>
+                    <p>
+                      La directora del establecimiento Sra. Angélica B. de Baetti
+                      reorganiza el Coro Polifónico.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1975</span>
+                    <p>Comienza el 1º curso de Peritos Mercantiles Nocturno.</p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1978</span>
+                    <p>Primera Promocion de Peritos Mercantiles.</p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1984</span>
+                    <p>Profesorado de Ciencias Jurídicas y Contables.</p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1989</span>
+                    <p>Analista de Sistemas Administrativos.</p>
+                  </div>
+                </div>
+                <span class="number-page">3</span>
+                <span class="nextprev-btn" data-page="turn-2"
+                  ><i class="bx bx-chevron-right"></i
+                ></span>
+              </div>
+
+              <div class="page-back">
+                <div class="workeduc-box">
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1993</span>
+                    <p>
+                      50° Aniversario: Se conmemoró con ceremonias, homenajes (a
+                      personal y la 1ª promoción nocturna) y una Gran Fiesta del
+                      Reencuentro que reunió a 1300 personas.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>1999</span>
+                    <p>
+                      La educacion se cambio a polimodal: EGB3: 8vo y 9no.
+                      Polimodal: 1er, 2do y 3er Año.
+                    </p>
+                  </div>
+
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>2006</span>
+                    <p>2/10: Asume como Rectora la Sra. Nora Franchini</p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>2008</span>
+                    <p>
+                      La educacion retomo el metodo anterior: 1er, 2do, 3er, 4to,
+                      5to Año de educacion Secundaria.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>2015</span>
+                    <p>
+                      Se crea la segunda carrera de nivel superior: Tecnicatura
+                      Superior en Gestión Industrial. 01/09: Asume como Rectora la
+                      Sra. Graciela Segado.
+                    </p>
+                  </div>
+                </div>
+                <span class="number-page">4</span>
+                <span class="nextprev-btn back" data-page="turn-2"
+                  ><i class="bx bx-chevron-left"></i
+                ></span>
+              </div>
+            </div>
+
+            <div class="book-page page-right turn" id="turn-3">
+              <div class="page-front">
+                <div class="workeduc-box">
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>2016</span>
+                    <p>
+                      La titulación de Analista de Sistemas Administrativos fue
+                      actualizada y renombrada a Tecnicatura Superior en Análisis
+                      Funcional de Sistemas Informáticos, para ofrecer un enfoque
+                      más especializado y vigente.
+                    </p>
+                  </div>
+
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>2018</span>
+                    <p>
+                      75º Aniversario. Se suma la modalidad de Ciencias Sociales al
+                      turno tarde y la apertura de nuevas divisiones en el nivel
+                      medio.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>2020</span>
+                    <p>
+                      Ariel Savino asumió como Rector, junto a Adriana Loretán como
+                      Vicerrectora.
+                    </p>
+                  </div>
+                  <div class="workeduc-content">
+                    <span class="year"><i class="bx bx-calendar"></i>2025</span>
+                    <p>
+                      La Directora del Nivel Medio Marisa Dellaschiava se jubiló,
+                      cerrando una etapa significativa en la historia
+                      institucional.
+                    </p>
+                  </div>
+                </div>
+                <span class="number-page">5</span>
+                <span class="nextprev-btn" data-page="turn-3"
+                  ><i class="bx bx-chevron-right"></i
+                ></span>
+              </div>
+
+              <div class="page-back">
+                <br />
+                <br />
+                <h1 class="title">Cierre de un capítulo legendario</h1>
+                <br />
+                <div class="workeduc-box">
+                  <div class="workeduc-content">
+                    <p>
+                      Nuestro camino histórico no se detiene aquí. Cada fecha, cada
+                      hito y cada avance es un escalón forjado por la dedicación de
+                      directivos, docentes, personal y, sobre todo, por miles de
+                      estudiantes que han cruzado nuestras puertas. Miramos hacia
+                      el futuro con la misma pasión que impulsó a nuestros
+                      fundadores, comprometidos a seguir siendo un faro de
+                      educación y progreso para la comunidad. Este libro es una
+                      promesa: la historia continúa.
+                    </p>
+                  </div>
+                </div>
+
+                <span class="number-page">6</span>
+                <span class="nextprev-btn back" data-page="turn-3"
+                  ><i class="bx bx-chevron-left"></i
+                ></span>
+                <a href="#" class="back-profile">
+                  <p>Inicio</p>
+                  <i class="bx bxs-home"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="versionCel">
+      <h1>Historia Institucional</h1>
+        <h2>Escuela Superior de Comercio N° 44</h2>
+        
+        <div class="historia-contenido">
+            <p>
+                Toda gran comunidad se cimienta sobre pilares sólidos, y en Gálvez, uno de esos pilares inamovibles es, sin duda, la Escuela Superior de Comercio Nº 44. Más que un conjunto de edificios y aulas, esta institución representa un torrente ininterrumpido de conocimiento, sueños y esfuerzo que ha fluido a través de las décadas. Esta es la historia de cómo una visión audaz, nacida en 1943, se convirtió en el faro educativo que hoy conocemos, un legado forjado por profesores, estudiantes y familias que creyeron en el poder transformador de la educación.
+            </p>
+
+            <div class="divider"></div>
+
+            <p><span class="year">1943</span> - Comienza el 1er Año en la Escuela de Artes y Oficios de la Nacion bajo la direccion del Sr. Ignacio Sancho siendo Secretrio Justo A. Diana. Por la cantidad de inscriptos debio tomarse examen y se seleccionaron los 40 mejores.</p>
+
+            <p><span class="year">1945</span> - Fue separada de la escuela de Artes y Oficios (hoy E.N.E.T Nº1)24/12: Toma la posecion del cargo la directora de la Escuela Nacional de Comercio la Sra. Nelly Tascheret de Riveros.</p>
+
+            <p><span class="year">1946</span> - La 1ª Sociedad Cooperadora quedó constituida el 30 de marzo, con la Sra. Nelly T. Q. de Riveros como Asesora y el Sr. Osvaldo Lotto como Presidente. El cuerpo directivo principal se completó con el Sr. Félix Mainetti (Vice-Presidente), el Sr. Miguel Zapata (Secretario) y el Sr. Antonio Trudo (Tesorero).</p>
+
+            <p><span class="year">1947</span> - El 14 de abril, la escuela implementó turnos (mañana para 1º, 2º y 3º año, y tarde para 4º y 5º año) debido a la falta de salones en la Escuela Técnica de Oficios. Poco después, el 25 de mayo, se realizó la bendición de la bandera donada por el Ministerio, con una misa de campaña a cargo del Pbro. Juan Giampoli.</p>
+
+            <p><span class="year">1953</span> - Comienza a funcionar la escuela en el edificio de la calle Lisandro de la Torre, propiedad de la Sra. Ángela María Molinari.</p>
+
+            <p><span class="year">1960</span> - La directora del establecimiento Sra. Angélica B. de Baetti reorganiza el Coro Polifónico. Comienza el 1º curso de Peritos Mercantiles Nocturno.</p>
+
+            <p><span class="year">1964</span> - Julio: La Sociedad cooperadora adquiere el inmueble ubicado en la calle Sarmiento 755.</p>
+
+            <p><span class="year">1966</span> - Se Inauguro el nuevo edificio con la ayuda del Batallón de Ingenieros de Construcción 121 de Santo Tomé.</p>
+
+            <div class="divider"></div>
+
+            <p><span class="year">1972</span> - La directora del establecimiento Sra. Angélica B. de Baetti reorganiza el Coro Polifónico.</p>
+
+            <p><span class="year">1975</span> - Comienza el 1º curso de Peritos Mercantiles Nocturno.</p>
+
+            <p><span class="year">1978</span> - Primera Promocion de Peritos Mercantiles.</p>
+
+            <p><span class="year">1984</span> - Profesorado de Ciencias Jurídicas y Contables.</p>
+
+            <p><span class="year">1989</span> - Analista de Sistemas Administrativos.</p>
+
+            <p><span class="year">1993</span> - 50° Aniversario: Se conmemoró con ceremonias, homenajes (a personal y la 1ª promoción nocturna) y una Gran Fiesta del Reencuentro que reunió a 1300 personas.</p>
+
+            <p><span class="year">1999</span> - La educacion se cambio a polimodal: EGB3: 8vo y 9no. Polimodal: 1er, 2do y 3er Año.</p>
+
+            <p><span class="year">2006</span> - 2/10: Asume como Rectora la Sra. Nora Franchini.</p>
+
+            <p><span class="year">2008</span> - La educacion retomo el metodo anterior: 1er, 2do, 3er, 4to, 5to Año de educacion Secundaria.</p>
+
+            <p><span class="year">2015</span> - Se crea la segunda carrera de nivel superior: Tecnicatura Superior en Gestión Industrial. 01/09: Asume como Rectora la Sra. Graciela Segado.</p>
+
+            <div class="divider"></div>
+
+            <p><span class="year">2016</span> - La titulación de Analista de Sistemas Administrativos fue actualizada y renombrada a Tecnicatura Superior en Análisis Funcional de Sistemas Informáticos, para ofrecer un enfoque más especializado y vigente.</p>
+
+            <p><span class="year">2018</span> - 75º Aniversario. Se suma la modalidad de Ciencias Sociales al turno tarde y la apertura de nuevas divisiones en el nivel medio.</p>
+
+            <p><span class="year">2020</span> - Ariel Savino asumió como Rector, junto a Adriana Loretán como Vicerrectora.</p>
+
+            <p><span class="year">2025</span> - La Directora del Nivel Medio Marisa Dellaschiava se jubiló, cerrando una etapa significativa en la historia institucional.</p>
+
+            <div class="divider"></div>
+
+            <p style="text-align: center; font-style: italic; color: #ffffff; margin-top: 40px;">
+                Nuestro camino histórico no se detiene aquí. Cada fecha, cada hito y cada avance es un escalón forjado por la dedicación de directivos, docentes, personal y, sobre todo, por miles de estudiantes que han cruzado nuestras puertas. Miramos hacia el futuro con la misma pasión que impulsó a nuestros fundadores, comprometidos a seguir siendo un faro de educación y progreso para la comunidad. Este libro es una promesa: <strong style="color: #ffffff; font-weight: 900;">la historia continúa.</strong>
+            </p>
+    </div>
+    <script>
+      // ------------------------------------------------
+      // --- Contenido de script1.js (Lógica de Menú Móvil) ---
+      // ------------------------------------------------
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Selecciona todos los enlaces que funcionan como "toggle" (interruptor)
+        const toggles = document.querySelectorAll(".dropdown-toggle");
+
+        // Función para verificar si estamos en un ancho de pantalla móvil
+        const isMobile = () => window.innerWidth <= 768;
+
+        toggles.forEach((toggle) => {
+          // Obtenemos el contenedor del submenú (el div.dropdown-content)
+          const content = toggle.nextElementSibling;
+          const dropdown = toggle.closest(".dropdown");
+
+          // Escuchamos el evento de clic en el enlace principal
+          toggle.addEventListener("click", (e) => {
+            // Si NO estamos en móvil, dejamos que el evento pase
+            if (!isMobile()) {
+              // Aquí el evento pasa, permitiendo que el CSS de hover funcione
+              return;
+            }
+
+            // --- CÓDIGO SOLO PARA MÓVIL ---
+
+            e.preventDefault(); // Evita que el enlace de menú navegue
+
+            // Alterna (pone o quita) la clase 'open' en el contenedor principal
+            dropdown.classList.toggle("open");
+            
+            // NO necesitamos ajustar la altura con JS si usamos la clase 'open' en el CSS media query
+            // (el código original de script1.js tenía código comentado o eliminado aquí)
+          });
+        });
+      });
+      
+      // ------------------------------------------------
+      // --- Contenido de script.js (Lógica del Libro) ---
+      // ------------------------------------------------
+
+      //turn pages when click next or prev button
+      const pageTurnBtn = document.querySelectorAll(".nextprev-btn");
+      pageTurnBtn.forEach((el, index) => {
+        el.onclick = () => {
+          const pageTurnId = el.getAttribute("data-page");
+          const pageTurn = document.getElementById(pageTurnId);
+          if (pageTurn.classList.contains("turn")) {
+            pageTurn.classList.remove("turn");
+            setTimeout(() => {
+              pageTurn.style.zIndex = 20 - index;
+            }, 500);
+          } else {
+            pageTurn.classList.add("turn");
+            setTimeout(() => {
+              pageTurn.style.zIndex = 20 + index;
+            }, 500);
+          }
+        };
+      });
+
+      //contact me button when click
+      const pages = document.querySelectorAll(".book-page.page-right");
+      // *** CÓDIGO DEL BOTÓN DE CONTACTO ELIMINADO PARA MANTENER LA FUNCIONALIDAD ***
+
+      //create reverse index function
+      let totalPages = pages.length;
+      let pageNumber = 0;
+      function reverseIndex() {
+        pageNumber--;
+        if (pageNumber < 0) {
+          pageNumber = totalPages - 1;
+        }
+      }
+
+      //back profile button when click
+      const backProfileBtn = document.querySelector(".back-profile");
+      backProfileBtn.onclick = () => {
+        pages.forEach((_, index) => {
+          setTimeout(() => {
+            reverseIndex();
+            pages[pageNumber].classList.remove("turn");
+
+            setTimeout(() => {
+              reverseIndex();
+              pages[pageNumber].style.zIndex = 10 + index;
+            }, 500);
+          }, (index + 1) * 200 + 100);
+        });
+      };
+
+      //opening animation
+      const coverRight = document.querySelector(".cover.cover-right");
+      const pageLeft = document.querySelector(".book-page.page-left");
+
+      //opening animation (cover right animation)
+      setTimeout(() => {
+        coverRight.classList.add("turn");
+      }, 2100);
+      setTimeout(() => {
+        coverRight.style.zIndex = -1;
+      }, 2800);
+
+      //opening animation (page left or profile page animation)
+      setTimeout(() => {
+        pageLeft.style.zIndex = 20;
+      }, 3200);
+
+      //opening animation (all page right animation)
+      pages.forEach((_, index) => {
+        setTimeout(() => {
+          reverseIndex();
+          pages[pageNumber].classList.remove("turn");
+          setTimeout(() => {
+            reverseIndex();
+            pages[pageNumber].style.zIndex = 10 + index;
+          }, 500);
+        }, (index + 1) * 200 + 2100);
+      });
+    </script>
+  </body>
+</html>

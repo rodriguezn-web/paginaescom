@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../images/flaticon.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    
+    <div id="page-loader">
+        <div class="gif-container">
+            <img src="../images/carga.gif" alt="Loading GIF"> 
+        </div>
+
+        <div class="loading-content">
+            <div class="loading-text">CARGANDO</div>
+            
+            <div class="loading-dotts">
+                <div class="dott"></div>
+                <div class="dott"></div>
+                <div class="dott"></div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+            <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo de la Institución"></a>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+         <nav class="navbar">
+            <a href="../index.html" style="--i:0;">Inicio</a>
+
+            <div class="dropdown" id="oferta-dropdown" style="--i:1;">
+                <a href="#" class="dropdown-toggle">Oferta educativa</a> 
+                <div class="dropdown-content">
+                    <a href="../NIVELMEDIO/index.html">Nivel Medio</a>
+                    <a href="../NIVELSUPERIOR/index.html">Nivel Superior</a>
+                </div>
+            </div>
+
+            <div class="dropdown" id="institucion-dropdown" style="--i:2;">
+                <a href="#" class="dropdown-toggle">Institución</a>
+                <div class="dropdown-content">
+                    <a href="../HISTORIA/index1.html">Historia</a>
+                    <a href="../OBJETIVOS/index.html">Objetivos</a>
+                    <a href="../MISIÓN/index.html">Mision</a>
+                </div>
+            </div>
+
+            <a href="../GALERIA/index.html" style="--i:3;">Galeria</a>
+            <a href="index.html" style="--i:4;">Contacto</a>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <h1 class="hero-title">CONTACTO</h1>
+            <h2>¿Tenés consultas? 
+               Estamos aquí para ayudarte en tu camino educativo.</h2>
+        </div>
+    </section>
+
+    <div class="container">
+        <header class="header-section">
+           
+        </header>
+
+        <main class="main-content">
+            <section class="contact-info">
+                <h2>Información de Contacto</h2>
+                <div class="info-row">
+                    <div class="icon-container"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="text-content">
+                        <h3>Dirección</h3>
+                        <p>Sarmiento 755</p>
+                        <p>Gálvez, Santa Fe, Argentina</p>
+                        <a href="#mapita" class="map-link">Ampliar el mapa</a>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="icon-container"><i class="fas fa-phone-alt"></i></div>
+                    <div class="text-content">
+                        <h3>Teléfonos</h3>
+                        <p>Secretaría: +54 3404 481266 / 481046</p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="icon-container"><i class="fas fa-envelope"></i></div>
+                    <div class="text-content">
+                        <h3>Email</h3>
+                        <p><a href="escom44@cegnet.com.ar">escom44@cegnet.com.ar</a></p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="icon-container"><i class="fas fa-clock"></i></div>
+                    <div class="text-content">
+                        <h3>Horarios de Atención</h3>
+                        <p>Lunes a Viernes: 8:00 a 12 hs - 17:30 a 22 hs</p>
+                    </div>
+                </div>
+                <div class="how-to-get-there">
+                    <h3>Cómo Llegar</h3>
+                    <div class="map-container" id="mapita">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3382.523325830386!2d-61.2239649!3d-32.0280235!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b58c64b4ebc7b9%3A0x32b00c1f3d13ea6e!2sSarmiento%20755%2C%20S2252%20G%C3%A1lvez%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1760398378752!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    </div>
+                </div>
+            </section>
+
+            <section class="contact-form-section">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="general">Consulta General</button>
+                    <button class="tab-button" data-tab="inscripcion">Inscripción</button>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido *</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="tu.email@ejemplo.com" required>
+                    </div>
+                    <div class="form-group full-width hidden-field" id="dni-field">
+                        <label for="dni">DNI *</label>
+                        <input type="text" id="dni" name="dni" placeholder="Tu DNI" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="3404 481266">
+                    </div>
+                    <div class="form-group full-width hidden-field" id="nivel-field">
+                        <label for="nivel">Nivel *</label>
+                        <select id="nivel" name="nivel" required>
+                            <option value="">Selecciona un nivel</option>
+                            <option value="secundario">Secundario</option>
+                            <option value="terciario">Terciario</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width hidden-field" id="carrera-field">
+                        <label for="carrera">Carrera/Orientación *</label>
+                        <select id="carrera" name="carrera" required>
+                            <option value="">Selecciona una opción</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width" id="mensaje-field">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+                        <div class="char-counter">Máximo 500 caracteres</div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> <span id="button-text">Enviar Consulta</span>
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+    
+<footer class="footer">
+        <div class="footer-content">
+            <div class="social-icons-minimal">
+            <a href="https://www.facebook.com/comerciogalvez" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/escom44" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+                <p>2025 ESCOM 44. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="jcLNMMsv-JgTgPDX_fjzf";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+</body>
+
+</html>

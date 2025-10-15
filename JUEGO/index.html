@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Preguntas - ESCOM 44</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../images/flaticon.png"> 
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <header class="header1">
+        <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo de la Institución"></a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-x" id="close-icon"></i>
+        </label>
+
+       <nav class="navbar">
+            <a href="../index.html" style="--i:0;">Inicio</a>
+
+            <div class="dropdown" id="oferta-dropdown" style="--i:1;">
+                <a href="#" class="dropdown-toggle">Oferta educativa</a> 
+                <div class="dropdown-content">
+                    <a href="../NIVELMEDIO/index.html">Nivel Medio</a>
+                    <a href="../NIVELSUPERIOR/index.html">Nivel Superior</a>
+                </div>
+            </div>
+
+            <div class="dropdown" id="institucion-dropdown" style="--i:2;">
+                <a href="#" class="dropdown-toggle">Institución</a>
+                <div class="dropdown-content">
+                    <a href="../HISTORIA/index1.html">Historia</a>
+                    <a href="../OBJETIVOS/index.html">Objetivos</a>
+                    <a href="../MISIÓN/index.html">Mision</a>
+                </div>
+            </div>
+
+            <a href="../GALERIA/index.html" style="--i:3;">Galeria</a>
+            <a href="../CONTACTO/index.html" style="--i:4;">Contacto</a>
+        </nav>
+    </header>
+    <div class="header-spacer"></div>
+    <div id="page-loader">
+      <div class="gif-container">
+          <img src="../images/carga.gif" alt="Loading GIF"> 
+      </div>
+
+      <div class="loading-content">
+          <div class="loading-text">CARGANDO</div>
+          
+          <div class="loading-dotts">
+              <div class="dott"></div>
+              <div class="dott"></div>
+              <div class="dott"></div>
+          </div>
+      </div>
+  </div>
+    <div class="game-container">
+        <div class="header">
+            <img src="../images/flaticon.png" alt="Logo Izquierdo" class="logo-left">
+            <h1>ESCOM 44 Challenge</h1>
+            <img src="../NIVELSUPERIOR/images/logosinf.png" alt="Logo Derecho" class="logo-right">
+            <p>¿Cuánto conoces sobre nuestra institución?</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="current-question">1</div>
+                <div class="stat-label">Pregunta</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="score">0</div>
+                <div class="stat-label">Puntaje</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="total-questions">10</div>
+                <div class="stat-label">Total</div>
+            </div>
+        </div>
+        
+        <div id="game-area">
+            <div class="question-container">
+                <div class="question" id="question-text">Cargando pregunta...</div>
+                <div class="options" id="options-container"></div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+            
+            <div class="controls">
+                <button id="next-btn" disabled>Siguiente</button>
+                <button id="restart-btn">Reiniciar</button>
+            </div>
+        </div>
+        
+        <div id="game-over" class="game-over" style="display: none;">
+            <h2>¡Juego Terminado!</h2>
+            <div class="result-message" id="result-message"></div>
+            <p>Tu puntaje final: <span id="final-score">0</span> de <span id="final-total">10</span></p>
+            <button id="play-again-btn">Jugar Nuevamente</button>
+        </div>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

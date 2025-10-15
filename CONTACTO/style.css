@@ -1,0 +1,761 @@
+/* ==================================== */
+/* === 1. VARIABLES Y RESET BÁSICO === */
+/* ==================================== */
+
+:root {
+    --primary-blue: #007bff;
+    --light-blue: #e8f0fe;
+    --dark-text: #333;
+    --light-gray: #f5f5f5;
+    --medium-gray: #ccc;
+    --border-color: #ddd;
+    --background-color: #fff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+}
+
+/* Tipografía y cuerpo principal con fondo */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    /* Fondo de la página */
+
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden; 
+}
+
+/* Overlay para mejorar legibilidad del fondo fijo */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+/* ==================================== */
+/* === 2. HEADER Y NAVEGACIÓN (HEADER) === */
+/* ==================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* Efecto blur de fondo del header */
+.header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(0,0,0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+/* Efecto de brillo (glitter) en hover */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255, .4), transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+/* Estilo del logo */
+.logo{
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 2.5rem;
+    width: auto;
+}
+
+/* Enlaces principales */
+.navbar a{
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.8rem;
+    transition: color 0.3s;
+}
+
+/* Enlaces principales (Hover/Active) */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary-blue);
+}
+
+/* --- MENÚS DESPLEGABLES (DROPDOWN) - ESCRITORIO --- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.8rem;
+}
+
+.dropdown > a {
+    font-size: 1.15rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    background: rgba(0,0,0, .7); 
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 200;
+    border-radius: 5px;
+    padding: 5px 0; 
+}
+
+.dropdown-content a {
+    color: aliceblue;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-weight: 400;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Muestra el submenú al pasar el ratón en escritorio */
+}
+
+/* Iconos de hamburguesa para móvil */
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: aliceblue;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* ==================================== */
+/* === 3. HERO SECTION (PORTADA) === */
+/* ==================================== */
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Fondo específico de la página de Contacto */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/fotocont.png') center/cover no-repeat;
+    color: white;
+}
+
+/* Título principal en el hero */
+.hero-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    padding: 0 20px;
+}
+
+/* ==================================== */
+/* === 4. CONTENIDO PRINCIPAL (CONTACTO) === */
+/* ==================================== */
+
+/* Contenedor principal con efecto de vidrio (semi-transparente) */
+.container {
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    max-width: 1200px;
+    width: 95%;
+    margin: 20px auto; 
+}
+
+/* Encabezado */
+.header-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Contenido principal con diseño de dos columnas */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* --- 4.1 Columna de Información y Mapa --- */
+.contact-info {
+    padding-right: 20px;
+    /* Estilos para el efecto de vidrio del bloque de info */
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.icon-container {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.text-content {
+    margin-left: 15px;
+}
+
+.text-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.text-content p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+.text-content a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Map container */
+.how-to-get-there h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.map-container {
+    margin-top: 10px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* --- 4.2 Columna de Formulario --- */
+.contact-form-section {
+    /* Estilos para el efecto de vidrio del bloque de formulario */
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pestañas del formulario */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #777;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* Formulario */
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    width: 100%;
+    /* Fondo semi-transparente para los campos */
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(5px);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+/* Clase para ocultar campos dinámicamente */
+.hidden-field {
+    display: none;
+}
+
+/* Contador de caracteres */
+.char-counter {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Botón de envío */
+.submit-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+.submit-btn i {
+    margin-right: 10px;
+}
+
+/* ==================================== */
+/* === 5. MEDIA QUERIES (RESPONSIVE) === */
+/* ==================================== */
+
+/* --- Escritorio Pequeño y Tablet (992px) --- */
+@media (max-width: 992px) {
+    /* Header */
+    .header {
+        padding: 1.3rem 2rem;
+    }
+    
+    /* Contenido de Contacto */
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .contact-form-section {
+        padding: 20px;
+    }
+    .contact-info {
+        padding-right: 0;
+    }
+}
+
+/* --- Móvil (768px) --- */
+@media (max-width: 768px) {
+    /* Header/Nav Móvil */
+    .header {
+        padding: 1.3rem 1rem; /* Reducir padding en móviles */
+    }
+
+    .icons {
+        display: inline-flex;
+    }
+    
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        overflow-x: hidden; /* Evita desbordamiento horizontal */
+        transition: height 0.3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 100vh; 
+        overflow-y: auto; 
+    }
+
+    /* Reglas para los elementos de navegación en móvil */
+    .navbar a,
+    .dropdown {
+        display: block;
+        font-size: 1.1rem;
+        text-align: center;
+        margin: 1.5rem 1rem;
+    }
+    
+    .dropdown {
+        margin: 1.5rem 0;
+        display: block;
+    }
+
+    /* Lógica de Submenús (Acordeón) */
+    .dropdown-content {
+        display: block; 
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out; 
+        max-width: 100%; /* Asegura que el submenú no exceda el contenedor */
+        padding: 0 1rem;
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        background: transparent;
+        backdrop-filter: none;        transform: none;
+    }
+
+    /* Estilo de los subenlaces */
+    .dropdown-content a {
+        text-align: left; 
+        padding: 8px 16px; 
+         padding-left: 40px; /* INDENTACIÓN */
+        font-size: 1rem; 
+        margin: 0.5rem 0; 
+        
+        opacity: 1; 
+        transform: none;
+    }
+    
+    .dropdown-toggle {
+        margin: 1.5rem 0;
+    }
+}
+
+/* --- Móvil Pequeño (576px) --- */
+@media (max-width: 576px) {
+    /* Contenido General */
+    .container {
+        padding: 15px; /* Reducir padding en móviles */
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        max-width: 100%; /* Evita que exceda el viewport */
+    }
+    .header-section h1 {
+        font-size: 2rem;
+    }
+    
+    /* Formulario */
+    .form-group {
+        flex: 1 1 100%;
+    }
+    .tabs {
+        flex-direction: column;
+    }
+    
+    /* Hero */
+    .hero-section {
+        min-height: 40vh;
+    }
+    .hero-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* ==================================== */
+/* === 6. LOADER DE PÁGINA === */
+/* ==================================== */
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    transition: opacity 0.5s ease-out; /* Transición para el efecto fade out */
+    opacity: 1;
+    pointer-events: all; /* Bloquea la interacción con el contenido de la página */
+}
+
+#page-loader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Permite la interacción cuando desaparece */
+}
+
+.gif-container {
+    max-width: 100%; /* Asegura que no exceda el viewport */
+    width: 400px; /* Ancho máximo deseado */
+    height: auto; /* Mantiene la proporción */
+    z-index: 1;
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: -100px;
+}
+
+.loading-text {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+.loading-dotts {
+    display: flex;
+    gap: 8px;
+}
+
+.dott {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.dott:nth-child(1) { animation-delay: 0s; }
+.dott:nth-child(2) { animation-delay: 0.2s; }
+.dott:nth-child(3) { animation-delay: 0.4s; }
+
+/* Keyframes de animación del loader */
+@keyframes textPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes dotPulse {
+    0%, 60%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    30% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .gif-container {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 450px; /* Máximo permitido */
+        height: auto;
+        top: 10%;
+    }
+    .loading-text {
+        font-size: 20px;
+    }
+    .loading-content {
+    margin-top: -80px; /* Mueve el texto hacia abajo para separarlo del GIF agrandado */
+}}
+.footer {
+    width: 100%;
+    padding: 15px;
+    margin-top: 40px; 
+    text-align: center;
+    
+    /* MODIFICACIÓN 1: Fondo transparente para que se mezcle con el fondo de la página */
+    background: transparent; 
+    /* MODIFICACIÓN 2: Letra oscura */
+    color: #333; 
+    /* Se elimina la sombra para un aspecto más limpio y que se integre al fondo */
+    box-shadow: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor de iconos sociales */
+.footer-social-icons {
+    margin-bottom: 15px;
+}
+.social-icons-minimal a {
+    color: #333; /* mismo color que la frase de abajo */
+    font-size: 1.6rem; /* tamaño más chico y proporcionado */
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.social-icons-minimal a:hover {
+    color: #000; /* un poco más oscuro al pasar el mouse */
+}
+
+
+.footer-social-icons a:hover {
+    /* Color de hover */
+    color: #000; 
+}
+
+.footer-content p {
+    margin: 5px 0;
+    /* Se asegura que el texto del párrafo sea oscuro */
+    color: #333; 
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 576px) {
+    .footer {
+        padding: 15px 10px;
+    }
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Evita desbordamiento horizontal global */
+}
+
+.container, .header, .navbar, .hero-section, .footer {
+    max-width: 100%;
+    overflow-x: hidden; /* Asegura que los contenedores no desborden */
+}

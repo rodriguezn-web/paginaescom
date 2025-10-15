@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISIÓN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="../images/flaticon.png"> 
+    <script src="Script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <div id="page-loader">
+      <div class="gif-container">
+          <img src="../images/carga.gif" alt="Loading GIF"> 
+      </div>
+
+      <div class="loading-content">
+          <div class="loading-text">CARGANDO</div>
+          
+          <div class="loading-dotts">
+              <div class="dott"></div>
+              <div class="dott"></div>
+              <div class="dott"></div>
+          </div>
+      </div>
+  </div>
+      <header class="header">
+    <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo de la Institución"></a>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+    </label>
+
+     <nav class="navbar">
+            <a href="../index.html" style="--i:0;">Inicio</a>
+
+            <div class="dropdown" id="oferta-dropdown" style="--i:1;">
+                <a href="#" class="dropdown-toggle">Oferta educativa</a> 
+                <div class="dropdown-content">
+                    <a href="../NIVELMEDIO/index.html">Nivel Medio</a>
+                    <a href="../NIVELSUPERIOR/index.html">Nivel Superior</a>
+                </div>
+            </div>
+
+            <div class="dropdown" id="institucion-dropdown" style="--i:2;">
+                <a href="#" class="dropdown-toggle">Institución</a>
+                <div class="dropdown-content">
+                    <a href="../HISTORIA/index1.html">Historia</a>
+                    <a href="../OBJETIVOS/index.html">Objetivos</a>
+                    <a href="index.html">Mision</a>
+                </div>
+            </div>
+
+            <a href="../GALERIA/index.html" style="--i:3;">Galeria</a>
+            <a href="../CONTACTO/index.html" style="--i:4;">Contacto</a>
+        </nav>
+</header>
+    <div class="background-image"></div>
+    
+    <div class="animated-bg"></div>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NUESTRA MISIÓN</h1>
+            <p>Mentes que inspiran</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        
+        <div class="main-title" style="margin-top: 60px;">
+        <h1>¿Cuál es nuestra finalidad?</h1>
+        </div>
+        
+        <div class="mission-blocks">
+            <div class="mission-block">
+                <div class="mission-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="mission-title">Inteligencia potenciada por la verdad</h3>
+                <p class="mission-text">
+                    Nuestra escuela es el espacio donde la Inteligencia le da poder a la verdad a través de un aprendizaje activo y significativo. 
+                    Cultivamos mentes críticas, curiosas e innovadoras, preparando a los estudiantes para discernir, construir conocimiento y aplicar
+                    su intelecto con integridad.
+                </p>
+            </div>
+            
+            <div class="mission-block">
+                <div class="mission-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3 class="mission-title">La disciplina que conecta</h3>
+                <p class="mission-text">
+                    Fomentamos la laboriosidad, la autoexigencia y el esfuerzo sostenido, pilares esenciales para alcanzar la excelencia personal. 
+                    Este rigor y disciplina se alinean serenamente con la solidaridad, el apoyo activo a los demás y un profundo compromiso de servicio. 
+                    Unimos la ambición de crecer con la responsabilidad de contribuir a nuestra comunidad.
+                </p>
+            </div>
+            
+            <div class="mission-block">
+                <div class="mission-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="mission-title">Respeto como cimiento comunitario</h3>
+                <p class="mission-text">
+                    El respeto incondicional a la persona humana es la base que sostiene toda nuestra convivencia escolar.
+                    Este valor define la calidad de las relaciones entre pares, asegura una comunicación auténtica entre profesores y alumnos, y 
+                    garantiza un ambiente seguro y constructivo.
+                </p>
+            </div>
+        </div>
+        
+        <div class="intro-section">
+            <div class="intro-content">
+                <p class="intro-text">
+                    Hoy educamos con una mirada puesta en el futuro, construyéndolo desde el presente sin repetir modelos del pasado. Revalorizamos los procesos formativos que, más allá de lo intelectual y lo técnico-profesional, abordan integralmente todas las dimensiones de la persona.
+                </p>
+            </div>
+        </div>
+        
+        <div class="conclusion-section">
+            <div class="conclusion-content">
+                <p class="conclusion-text">
+                    Promovemos que estas actitudes construyan un clima institucional basado en el respeto, la alegría, el compromiso, el estudio, la solidaridad y el compañerismo, capaz de impactar positivamente en cada integrante de la comunidad educativa.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="jcLNMMsv-JgTgPDX_fjzf";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+<footer class="footer-minimal">
+    <div class="footer-content-minimal">
+        
+        <div class="social-icons-minimal">
+            <a href="https://www.facebook.com/comerciogalvez" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/escom44" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <p class="copyright-minimal">&copy; 2025 ESCOM 44. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</html>
